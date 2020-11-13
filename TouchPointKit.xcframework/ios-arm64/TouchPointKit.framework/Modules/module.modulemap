@@ -1,0 +1,11 @@
+framework module TouchPointKit {
+  umbrella header "TouchPointKit.h"
+
+  export *
+  module * { export * }
+}
+
+module TouchPointKit.Swift {
+    header "TouchPointKit-Swift.h"
+    requires objc
+}
