@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "TouchPointKit"
-    s.version      = "0.0.4"
+    s.version      = "0.0.5"
     s.summary      = "A brief description of TouchPointKitFramework project."
     s.description  = <<-DESC
     An extended description of TouchPointKitFramework project.
@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
     s.vendored_frameworks = "TouchPointKit.xcframework"
     s.platform = :ios
     s.swift_version = "5.2.4"
-    s.ios.deployment_target  = '11.0'
+    s.ios.deployment_target  = '10.0'
 end

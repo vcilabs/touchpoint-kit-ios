@@ -1,0 +1,49 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TouchPointKit
+import CommonCrypto
+import CryptoKit
+import Foundation
+import Swift
+import SystemConfiguration
+@_exported import TouchPointKit
+import UIKit
+import WebKit
+import os
+@objc public protocol TouchPointActivityCompletionDelegate : AnyObject {
+  @objc func didActivityCompleted()
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TouchPointActivity : ObjectiveC.NSObject {
+  @objc public var visitor: [Swift.String : Swift.String]
+  @objc public static let shared: TouchPointKit.TouchPointActivity
+  @objc public var shouldApplyAPIFilter: Swift.Bool
+  @objc public var enableDebugLogs: Swift.Bool
+  @objc public var disableAllLogs: Swift.Bool
+  @objc public var disableCaching: Swift.Bool
+  @objc public var defaultBannerHeight: CoreGraphics.CGFloat
+  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenNames: [Swift.String] = [], visitor: [Swift.String : Swift.String] = [:])
+  @objc public func setScreenName(screenName: Swift.String, banner: Swift.Bool = true)
+  @objc public func openActivity(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
+  @objc public func shouldShowActivity(screenName: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc public enum TouchPointPods : Swift.Int {
+  case na1
+  case na2
+  case eu1
+  case eu2
+  case ap2
+  case dev1
+  case dev2
+  case sit1
+  case pub
+  public func value() -> Swift.String
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension TouchPointKit.TouchPointPods : Swift.Equatable {}
+extension TouchPointKit.TouchPointPods : Swift.Hashable {}
+extension TouchPointKit.TouchPointPods : Swift.RawRepresentable {}
