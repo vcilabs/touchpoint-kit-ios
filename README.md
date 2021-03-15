@@ -13,7 +13,7 @@ pod init
 ###### This will create pod file. Add the following line below use_frameworks! in your pod file.
 
 ```
-pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '0.0.5'
+pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '0.0.6'
 ```
 
 ###### Save it and then install the pod by running the following command.
