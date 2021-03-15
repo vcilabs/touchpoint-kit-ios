@@ -224,6 +224,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 @property (nonatomic) BOOL disableAllLogs;
 @property (nonatomic) BOOL disableCaching;
 @property (nonatomic) CGFloat defaultBannerHeight;
+@property (nonatomic) BOOL isStatusBarStyleLight;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Call this method on app launch to configure the TouchPoint SDK.
@@ -515,6 +516,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 @property (nonatomic) BOOL disableAllLogs;
 @property (nonatomic) BOOL disableCaching;
 @property (nonatomic) CGFloat defaultBannerHeight;
+@property (nonatomic) BOOL isStatusBarStyleLight;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Call this method on app launch to configure the TouchPoint SDK.
@@ -806,6 +808,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 @property (nonatomic) BOOL disableAllLogs;
 @property (nonatomic) BOOL disableCaching;
 @property (nonatomic) CGFloat defaultBannerHeight;
+@property (nonatomic) BOOL isStatusBarStyleLight;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 /// Call this method on app launch to configure the TouchPoint SDK.

@@ -21,6 +21,7 @@ import os
   @objc public var disableAllLogs: Swift.Bool
   @objc public var disableCaching: Swift.Bool
   @objc public var defaultBannerHeight: CoreGraphics.CGFloat
+  @objc public var isStatusBarStyleLight: Swift.Bool
   @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenNames: [Swift.String] = [], visitor: [Swift.String : Swift.String] = [:])
   @objc public func setScreenName(screenName: Swift.String, banner: Swift.Bool = true)
   @objc public func openActivity(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)

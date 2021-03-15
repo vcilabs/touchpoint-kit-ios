@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "TouchPointKit"
-    s.version      = "0.0.5"
+    s.version      = "0.0.6"
     s.summary      = "A brief description of TouchPointKitFramework project."
     s.description  = <<-DESC
     An extended description of TouchPointKitFramework project.
