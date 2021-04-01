@@ -252,7 +252,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 /// completed so that you can hide your custom component
 ///
-- (void)openActivityWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForScreenWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
 /// Call this method to check if any TouchPoint activity pending to be
 /// displayed for current screen, if you want to open TouchPoint activity
 /// using custom component
@@ -262,7 +262,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// returns:
 /// true if TouchPoint activity is not available or not seen by
 /// user for current screen
-- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName banner:(BOOL)banner SWIFT_WARN_UNUSED_RESULT;
+/// Open touchpoint activity by distribution url
+/// \param distUrl distribution url
+///
+/// \param useBannerStyling true for banner, false for custom component
+///
+/// \param delegate delegate
+///
+- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+/// Preload touchpoint activity for distribution url
+/// \param distUrl distribution url
+///
+- (void)cacheActivityForUrl:(NSString * _Nonnull)distUrl;
+/// Check if an activity is seen by user or not
+/// \param distUrl distribution url
+///
+///
+/// returns:
+/// true if activity already seen else false
+- (BOOL)isActivitySeenWithDistUrl:(NSString * _Nullable)distUrl SWIFT_WARN_UNUSED_RESULT;
 @end
 
 
@@ -544,7 +563,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 /// completed so that you can hide your custom component
 ///
-- (void)openActivityWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForScreenWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
 /// Call this method to check if any TouchPoint activity pending to be
 /// displayed for current screen, if you want to open TouchPoint activity
 /// using custom component
@@ -554,7 +573,26 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// returns:
 /// true if TouchPoint activity is not available or not seen by
 /// user for current screen
-- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName banner:(BOOL)banner SWIFT_WARN_UNUSED_RESULT;
+/// Open touchpoint activity by distribution url
+/// \param distUrl distribution url
+///
+/// \param useBannerStyling true for banner, false for custom component
+///
+/// \param delegate delegate
+///
+- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+/// Preload touchpoint activity for distribution url
+/// \param distUrl distribution url
+///
+- (void)cacheActivityForUrl:(NSString * _Nonnull)distUrl;
+/// Check if an activity is seen by user or not
+/// \param distUrl distribution url
+///
+///
+/// returns:
+/// true if activity already seen else false
+- (BOOL)isActivitySeenWithDistUrl:(NSString * _Nullable)distUrl SWIFT_WARN_UNUSED_RESULT;
 @end
 
 

@@ -24,8 +24,11 @@ import os
   @objc public var isStatusBarStyleLight: Swift.Bool
   @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenNames: [Swift.String] = [], visitor: [Swift.String : Swift.String] = [:])
   @objc public func setScreenName(screenName: Swift.String, banner: Swift.Bool = true)
-  @objc public func openActivity(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
-  @objc public func shouldShowActivity(screenName: Swift.String) -> Swift.Bool
+  @objc public func openActivityForScreen(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
+  @objc public func shouldShowActivity(screenName: Swift.String, banner: Swift.Bool = false) -> Swift.Bool
+  @objc public func openActivityForUrl(distUrl: Swift.String?, useBannerStyling: Swift.Bool = true, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
+  @objc public func cacheActivityForUrl(_ distUrl: Swift.String)
+  @objc public func isActivitySeen(distUrl: Swift.String?) -> Swift.Bool
   @objc deinit
 }
 @objc public enum TouchPointPods : Swift.Int {
