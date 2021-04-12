@@ -26,8 +26,8 @@ import os
   @objc public func setScreenName(screenName: Swift.String, banner: Swift.Bool = true)
   @objc public func openActivityForScreen(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
   @objc public func shouldShowActivity(screenName: Swift.String, banner: Swift.Bool = false) -> Swift.Bool
-  @objc public func openActivityForUrl(distUrl: Swift.String?, useBannerStyling: Swift.Bool = true, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
-  @objc public func cacheActivityForUrl(_ distUrl: Swift.String)
+  @objc public func openActivityForUrl(distUrl: Swift.String?, useBannerStyling: Swift.Bool = true, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil, alwaysShow: Swift.Bool = false)
+  @objc public func cacheActivityForUrl(_ distUrl: Swift.String, alwaysShow: Swift.Bool = false)
   @objc public func isActivitySeen(distUrl: Swift.String?) -> Swift.Bool
   @objc deinit
 }

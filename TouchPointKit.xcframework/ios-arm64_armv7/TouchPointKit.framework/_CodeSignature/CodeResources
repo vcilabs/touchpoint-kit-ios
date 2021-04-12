@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/TouchPointKit-Swift.h</key>
 		<data>
-		d0dSTmqUj5N9csxuEtjMi1H0gnw=
+		jPiYzf/Z9j9xMdBDoJXQ404mDGw=
 		</data>
 		<key>Headers/TouchPointKit.h</key>
 		<data>
@@ -18,63 +18,63 @@
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm.swiftdoc</key>
 		<data>
-		4gN7UgNBYqyw4B52Ij7ll5plbPU=
+		8LzA2qAlW/7boI944hlmU/FRTao=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm.swiftinterface</key>
 		<data>
-		is4HeW0f/x1zRpGoHKdx3GdJb7c=
+		KqEsJWVkietqAxP9MVzB0Ju/YgY=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm.swiftmodule</key>
 		<data>
-		zOd61gWy3xHIP4R7Sq9rwPW8Bu0=
+		7CZY2NhMVadW2aLHtZb9niw97CA=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		/IxrC5eqXxApDhMhQR+ex+R57XE=
+		SpV/MQofESIl25z4+ujgA6N5OvQ=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		idlqDIlm0GJWvCM58AsDmFSBHz8=
+		Docm0MMCjrknKVsJ/jW2q//uN2o=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		ux985b0nLg/XiGYbh3JxoqL1Agc=
+		8z+BvhFFlGu1KdOdfbOEWOyFJcM=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		/IxrC5eqXxApDhMhQR+ex+R57XE=
+		SpV/MQofESIl25z4+ujgA6N5OvQ=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftinterface</key>
 		<data>
-		idlqDIlm0GJWvCM58AsDmFSBHz8=
+		Docm0MMCjrknKVsJ/jW2q//uN2o=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		ux985b0nLg/XiGYbh3JxoqL1Agc=
+		8z+BvhFFlGu1KdOdfbOEWOyFJcM=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<data>
-		4gN7UgNBYqyw4B52Ij7ll5plbPU=
+		8LzA2qAlW/7boI944hlmU/FRTao=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<data>
-		is4HeW0f/x1zRpGoHKdx3GdJb7c=
+		KqEsJWVkietqAxP9MVzB0Ju/YgY=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<data>
-		zOd61gWy3xHIP4R7Sq9rwPW8Bu0=
+		7CZY2NhMVadW2aLHtZb9niw97CA=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/armv7.swiftdoc</key>
 		<data>
-		4gN7UgNBYqyw4B52Ij7ll5plbPU=
+		8LzA2qAlW/7boI944hlmU/FRTao=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/armv7.swiftinterface</key>
 		<data>
-		is4HeW0f/x1zRpGoHKdx3GdJb7c=
+		KqEsJWVkietqAxP9MVzB0Ju/YgY=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/armv7.swiftmodule</key>
 		<data>
-		zOd61gWy3xHIP4R7Sq9rwPW8Bu0=
+		7CZY2NhMVadW2aLHtZb9niw97CA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -82,15 +82,23 @@
 		</data>
 		<key>TouchPointBannerView.nib/objects-11.0+.nib</key>
 		<data>
-		NWXzfhdcd9BOsAD/rMv2P2Qehz4=
+		ZlBGMuUM7SxVaw6fRr9JjblDGyQ=
 		</data>
 		<key>TouchPointBannerView.nib/runtime.nib</key>
 		<data>
-		wVc9AAu4RiIEgirVQBF4oihOwZE=
+		WNhj+yKlYWg9qQNt2I8HicswcZA=
 		</data>
-		<key>TouchPointWebViewController.nib</key>
+		<key>touchpoint.storyboardc/Info.plist</key>
 		<data>
-		7OKuBpSxijo31kfUVLznrOVjWWI=
+		BuVYb3OPUbIGuRqep4WteEGuxzM=
+		</data>
+		<key>touchpoint.storyboardc/LTF-1C-6qe-view-9VU-q5-sWO.nib</key>
+		<data>
+		vd/ez2EYRCx8dFAKq+L5yRYMRNE=
+		</data>
+		<key>touchpoint.storyboardc/TouchPointWebViewController.nib</key>
+		<data>
+		qrLKRoD9iDdsEbVmCB79YGNXGCI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -99,11 +107,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d0dSTmqUj5N9csxuEtjMi1H0gnw=
+			jPiYzf/Z9j9xMdBDoJXQ404mDGw=
 			</data>
 			<key>hash2</key>
 			<data>
-			VEqfKn6SEUUjU+gA0uBxhdAacGP1ZFIRZIxgd8KUVOY=
+			vJPGpPA0B3NbDELiBBzw2xtTXvM96EFgjm2kNRwoKRA=
 			</data>
 		</dict>
 		<key>Headers/TouchPointKit.h</key>
@@ -121,165 +129,165 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4gN7UgNBYqyw4B52Ij7ll5plbPU=
+			8LzA2qAlW/7boI944hlmU/FRTao=
 			</data>
 			<key>hash2</key>
 			<data>
-			kDSjzHe63LRcSTlBQHdkTYB+GFNXDUtl9eZm49jPoeU=
+			eYjZ95r3h9PeXwEVEUIWPykxI14tKNiInyRBN4ZfPsU=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			is4HeW0f/x1zRpGoHKdx3GdJb7c=
+			KqEsJWVkietqAxP9MVzB0Ju/YgY=
 			</data>
 			<key>hash2</key>
 			<data>
-			O3wqHk1iQX2dRR9lO4Q7/T4CalsZV72QEU/07GEGeLg=
+			4LEJ8aAroh193ulS3LUvdxENZojf+CtThC4nPz2ZpiM=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zOd61gWy3xHIP4R7Sq9rwPW8Bu0=
+			7CZY2NhMVadW2aLHtZb9niw97CA=
 			</data>
 			<key>hash2</key>
 			<data>
-			S02giVlNSk9alVHxz7a2HR0If/JL1WmWvlfch6Z8RHY=
+			EE+vV0G4MN8X1DbhiPkc3zydlsAFmn8tRuKc6LXjyhI=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/IxrC5eqXxApDhMhQR+ex+R57XE=
+			SpV/MQofESIl25z4+ujgA6N5OvQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			DadrZFkIDe/UILmzx4lhDrWzxAzzWLf3DuSmV78hiY0=
+			0Ctiy/Bum2TRO5juLSD7yKos0jvxPPsVQTLh9EzBMcA=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			idlqDIlm0GJWvCM58AsDmFSBHz8=
+			Docm0MMCjrknKVsJ/jW2q//uN2o=
 			</data>
 			<key>hash2</key>
 			<data>
-			z7bJeu73aEB1chgwV/MGBbw3m6jMO670pSOP9ucu/Jo=
+			MQx5VtciQzzStRdcVZmkg5ypQj8VHHk29Ctl+RuABTY=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ux985b0nLg/XiGYbh3JxoqL1Agc=
+			8z+BvhFFlGu1KdOdfbOEWOyFJcM=
 			</data>
 			<key>hash2</key>
 			<data>
-			HGpvapkbnbOJ+HmgC3f1F2HfZloFNmuPOtq1cQWGaDw=
+			zqRyfKz+YcKHcTvnLRu7fMJqnBVQlzRkNWdkriRpFjM=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/IxrC5eqXxApDhMhQR+ex+R57XE=
+			SpV/MQofESIl25z4+ujgA6N5OvQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			DadrZFkIDe/UILmzx4lhDrWzxAzzWLf3DuSmV78hiY0=
+			0Ctiy/Bum2TRO5juLSD7yKos0jvxPPsVQTLh9EzBMcA=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			idlqDIlm0GJWvCM58AsDmFSBHz8=
+			Docm0MMCjrknKVsJ/jW2q//uN2o=
 			</data>
 			<key>hash2</key>
 			<data>
-			z7bJeu73aEB1chgwV/MGBbw3m6jMO670pSOP9ucu/Jo=
+			MQx5VtciQzzStRdcVZmkg5ypQj8VHHk29Ctl+RuABTY=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ux985b0nLg/XiGYbh3JxoqL1Agc=
+			8z+BvhFFlGu1KdOdfbOEWOyFJcM=
 			</data>
 			<key>hash2</key>
 			<data>
-			HGpvapkbnbOJ+HmgC3f1F2HfZloFNmuPOtq1cQWGaDw=
+			zqRyfKz+YcKHcTvnLRu7fMJqnBVQlzRkNWdkriRpFjM=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/armv7-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4gN7UgNBYqyw4B52Ij7ll5plbPU=
+			8LzA2qAlW/7boI944hlmU/FRTao=
 			</data>
 			<key>hash2</key>
 			<data>
-			kDSjzHe63LRcSTlBQHdkTYB+GFNXDUtl9eZm49jPoeU=
+			eYjZ95r3h9PeXwEVEUIWPykxI14tKNiInyRBN4ZfPsU=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/armv7-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			is4HeW0f/x1zRpGoHKdx3GdJb7c=
+			KqEsJWVkietqAxP9MVzB0Ju/YgY=
 			</data>
 			<key>hash2</key>
 			<data>
-			O3wqHk1iQX2dRR9lO4Q7/T4CalsZV72QEU/07GEGeLg=
+			4LEJ8aAroh193ulS3LUvdxENZojf+CtThC4nPz2ZpiM=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/armv7-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zOd61gWy3xHIP4R7Sq9rwPW8Bu0=
+			7CZY2NhMVadW2aLHtZb9niw97CA=
 			</data>
 			<key>hash2</key>
 			<data>
-			S02giVlNSk9alVHxz7a2HR0If/JL1WmWvlfch6Z8RHY=
+			EE+vV0G4MN8X1DbhiPkc3zydlsAFmn8tRuKc6LXjyhI=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/armv7.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4gN7UgNBYqyw4B52Ij7ll5plbPU=
+			8LzA2qAlW/7boI944hlmU/FRTao=
 			</data>
 			<key>hash2</key>
 			<data>
-			kDSjzHe63LRcSTlBQHdkTYB+GFNXDUtl9eZm49jPoeU=
+			eYjZ95r3h9PeXwEVEUIWPykxI14tKNiInyRBN4ZfPsU=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/armv7.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			is4HeW0f/x1zRpGoHKdx3GdJb7c=
+			KqEsJWVkietqAxP9MVzB0Ju/YgY=
 			</data>
 			<key>hash2</key>
 			<data>
-			O3wqHk1iQX2dRR9lO4Q7/T4CalsZV72QEU/07GEGeLg=
+			4LEJ8aAroh193ulS3LUvdxENZojf+CtThC4nPz2ZpiM=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/armv7.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zOd61gWy3xHIP4R7Sq9rwPW8Bu0=
+			7CZY2NhMVadW2aLHtZb9niw97CA=
 			</data>
 			<key>hash2</key>
 			<data>
-			S02giVlNSk9alVHxz7a2HR0If/JL1WmWvlfch6Z8RHY=
+			EE+vV0G4MN8X1DbhiPkc3zydlsAFmn8tRuKc6LXjyhI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -297,33 +305,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NWXzfhdcd9BOsAD/rMv2P2Qehz4=
+			ZlBGMuUM7SxVaw6fRr9JjblDGyQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			zOo16a9jX613heFBt6l4378DPgsD4c0payc99qBOlcc=
+			hz/pWvmmTjhSQKZr8MYwjofOwbI1j49RPROFe9j5Dm4=
 			</data>
 		</dict>
 		<key>TouchPointBannerView.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wVc9AAu4RiIEgirVQBF4oihOwZE=
+			WNhj+yKlYWg9qQNt2I8HicswcZA=
 			</data>
 			<key>hash2</key>
 			<data>
-			nVRhZzQ/DWhIDkNu2PzcnZdAjxJiOubY/diGzPTevgA=
+			2V1kvFLldSlcI4nKMVRYPgHnGV1vr1RrwyGcYK6hQUE=
 			</data>
 		</dict>
-		<key>TouchPointWebViewController.nib</key>
+		<key>touchpoint.storyboardc/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			7OKuBpSxijo31kfUVLznrOVjWWI=
+			BuVYb3OPUbIGuRqep4WteEGuxzM=
 			</data>
 			<key>hash2</key>
 			<data>
-			qKUOYtJIgDHfAIC8SSUBM3n4qlUBJlVsx42pBDs6A0c=
+			mHGbwFEs6kxgNcfQTZw7vZGt1s05xngUQEIOd31ui1I=
+			</data>
+		</dict>
+		<key>touchpoint.storyboardc/LTF-1C-6qe-view-9VU-q5-sWO.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			vd/ez2EYRCx8dFAKq+L5yRYMRNE=
+			</data>
+			<key>hash2</key>
+			<data>
+			TXnAcxT6fjdV3Zrgkwib7kT+iN9K9hGtdT8mHh5Rrs0=
+			</data>
+		</dict>
+		<key>touchpoint.storyboardc/TouchPointWebViewController.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qrLKRoD9iDdsEbVmCB79YGNXGCI=
+			</data>
+			<key>hash2</key>
+			<data>
+			DSNCg9fMsoDT0vsgCFm5d4Ipy8UzF/Hx1DvZcHcuG1E=
 			</data>
 		</dict>
 	</dict>

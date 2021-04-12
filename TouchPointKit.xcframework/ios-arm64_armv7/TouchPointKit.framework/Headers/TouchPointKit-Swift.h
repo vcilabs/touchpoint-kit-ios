@@ -270,11 +270,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate delegate
 ///
-- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
 /// Preload touchpoint activity for distribution url
 /// \param distUrl distribution url
 ///
-- (void)cacheActivityForUrl:(NSString * _Nonnull)distUrl;
+- (void)cacheActivityForUrl:(NSString * _Nonnull)distUrl alwaysShow:(BOOL)alwaysShow;
 /// Check if an activity is seen by user or not
 /// \param distUrl distribution url
 ///
@@ -581,11 +581,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate delegate
 ///
-- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
 /// Preload touchpoint activity for distribution url
 /// \param distUrl distribution url
 ///
-- (void)cacheActivityForUrl:(NSString * _Nonnull)distUrl;
+- (void)cacheActivityForUrl:(NSString * _Nonnull)distUrl alwaysShow:(BOOL)alwaysShow;
 /// Check if an activity is seen by user or not
 /// \param distUrl distribution url
 ///
