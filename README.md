@@ -1,7 +1,7 @@
 # touchpoint-kit-ios
 
 ## About
-- version: 0.0.9
+- version: LATEST_TAG
 - min iOS version supported: 10.0
 
 ###### Open the Terminal & use cd to switch to your  project directory. Initialise pod by running the following command.
@@ -13,7 +13,7 @@ pod init
 ###### This will create pod file. Add the following line below use_frameworks! in your pod file.
 
 ```
-pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '0.0.9'
+pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => 'LATEST_TAG'
 ```
 
 ###### Save it and then install the pod by running the following command.
