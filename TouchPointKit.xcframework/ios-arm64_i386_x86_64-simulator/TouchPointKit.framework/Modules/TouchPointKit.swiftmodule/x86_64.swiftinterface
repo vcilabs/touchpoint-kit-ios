@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
-// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name TouchPointKit
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name TouchPointKit
 import CommonCrypto
 import CryptoKit
 import Foundation
@@ -15,7 +15,7 @@ import os
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TouchPointActivity : ObjectiveC.NSObject {
   @objc public var visitor: [Swift.String : Swift.String]
-  @objc public static let shared: TouchPointKit.TouchPointActivity
+  @objc public static var shared: TouchPointKit.TouchPointActivity
   @objc public var shouldApplyAPIFilter: Swift.Bool
   @objc public var enableDebugLogs: Swift.Bool
   @objc public var disableAllLogs: Swift.Bool
@@ -48,6 +48,3 @@ import os
     get
   }
 }
-extension TouchPointKit.TouchPointPods : Swift.Equatable {}
-extension TouchPointKit.TouchPointPods : Swift.Hashable {}
-extension TouchPointKit.TouchPointPods : Swift.RawRepresentable {}
