@@ -94,11 +94,11 @@
 		</data>
 		<key>TouchPointBannerView.nib/objects-11.0+.nib</key>
 		<data>
-		bRv8mhiggza31WUH2NLXEFApJ98=
+		1sF3meD1IRtg+2o7kZ7tJ6K0xS0=
 		</data>
 		<key>TouchPointBannerView.nib/runtime.nib</key>
 		<data>
-		F0kBvpt7kLlVeyT1MvVzSypvAAE=
+		yqmcRtVFjKnh/56UJ6Prd1pXwmE=
 		</data>
 		<key>touchpoint.storyboardc/Info.plist</key>
 		<data>
@@ -106,11 +106,11 @@
 		</data>
 		<key>touchpoint.storyboardc/LTF-1C-6qe-view-9VU-q5-sWO.nib</key>
 		<data>
-		HoQUFc3YzpP6mt/uKwf2X+MQ2CM=
+		AUwJ5gAXI2fu7xnZKV0jlZde4iY=
 		</data>
 		<key>touchpoint.storyboardc/TouchPointWebViewController.nib</key>
 		<data>
-		F9iz8/AVHbgnor+LuDcRdgNRCV8=
+		4S+uZ1l0B+jOU4h3UvXTB8MLV4c=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -350,22 +350,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			bRv8mhiggza31WUH2NLXEFApJ98=
+			1sF3meD1IRtg+2o7kZ7tJ6K0xS0=
 			</data>
 			<key>hash2</key>
 			<data>
-			N/DX6JCUVZ4coYk0oO0BZsTR8SuU6Tvcd6hH1xt5qu0=
+			E6xkEsjcOFOfIvqQ1E0b59hIZud8CI3E7AjGNjWlGHs=
 			</data>
 		</dict>
 		<key>TouchPointBannerView.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F0kBvpt7kLlVeyT1MvVzSypvAAE=
+			yqmcRtVFjKnh/56UJ6Prd1pXwmE=
 			</data>
 			<key>hash2</key>
 			<data>
-			PSZbtxUMHvl64XTVfdS59ZtYkHQH/skxpPptX6KquMc=
+			mEWt+aUJt8IqE0eoJqPAgsVCVY19yM3adZhnOKJug/k=
 			</data>
 		</dict>
 		<key>touchpoint.storyboardc/Info.plist</key>
@@ -383,22 +383,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HoQUFc3YzpP6mt/uKwf2X+MQ2CM=
+			AUwJ5gAXI2fu7xnZKV0jlZde4iY=
 			</data>
 			<key>hash2</key>
 			<data>
-			KwVbll9FAbct3vwFhTJUewPQviE3RwF9Mn1smBP/DLU=
+			BeWKHUjlLvwEewx3yPEeAJotzfY4duxWF9PVSLQNTPc=
 			</data>
 		</dict>
 		<key>touchpoint.storyboardc/TouchPointWebViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F9iz8/AVHbgnor+LuDcRdgNRCV8=
+			4S+uZ1l0B+jOU4h3UvXTB8MLV4c=
 			</data>
 			<key>hash2</key>
 			<data>
-			fsQv/Vz9KYDS3b/WTxrNn5gURfMCBmYFI3RDyFcMe/k=
+			021OJ85zvjmfDCG0TuOfPweULFOA5t6iH9TgYimGdKM=
 			</data>
 		</dict>
 	</dict>
