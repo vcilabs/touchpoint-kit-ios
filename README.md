@@ -4,6 +4,9 @@ The purpose of the Touchpoint mobile SDK is to create an integration between a m
 ## Minimum Requirements
 - iOS version 10.0
 
+## Sample App
+https://github.com/chad-vc/touchpointkit-sample-ios
+
 ## Glossary
 - Touchpoint activity: an activity created by a user via the Touchpoint dashboard.
 - Touchpoint distribution: a distribution defines how an activity is propagated amongst respondents and manages the publishing lifecycle. A distribution can have different types, in this case it would be a mobile distribution. A distribution is linked to a Touchpoint activity.
