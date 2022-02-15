@@ -5,7 +5,7 @@ The purpose of the Touchpoint mobile SDK is to create an integration between a m
 - iOS version 10.0
 
 ## Sample App
-https://github.com/chad-vc/touchpointkit-sample-ios
+https://github.com/vcilabs/touchpointkit-sample-ios
 
 ## Glossary
 - Touchpoint activity: an activity created by a user via the Touchpoint dashboard.
