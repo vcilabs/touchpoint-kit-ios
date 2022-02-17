@@ -54,6 +54,18 @@ A: Only one custom component per screen. The SDK will open the activity assigned
 - Q: Can a custom component be persistent in that it will trigger the activity even if the visitor has already seen it?<br/>
 A: This scenario is useful for a use case like a “collect feedback” button where you always want the user to be able to respond to the activity. There is an “always_show” property in distributions which forces the SDK to open the distribution regardless of how many times the visitor has completed/closed that activity.
 
+## Installation using Pods
+Include the following in your `Podfile`:
+
+```pod
+pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '0.1.8'
+```
+
+And run `pod install`
+
+## Installation using SPM
+Inside the XCode package manager, add the following URL: `https://github.com/vcilabs/touchpoint-kit-ios`.
+
 ## Implementation
 In the AppDelegate class, import the SDK using: `import TouchPointKit`. Then In the `didFinishLaunchingWithOptions` function add the following initialization code.
 
