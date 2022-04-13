@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
-    s.name         = "TouchPointKit"
-    s.version      = "0.1.7"
-    s.summary      = "A brief description of TouchPointKitFramework project."
-    s.description  = <<-DESC
-    An extended description of TouchPointKitFramework project.
+    s.name = "TouchPointKit"
+    s.version = "0.1.8"
+    s.summary = "TouchPointKit enables easy integration with Alida Touchpoint."
+    s.description = <<-DESC
+    TouchPointKit enables easy integration with Alida Touchpoint.
     DESC
-    s.homepage     = "http://www.google.com"
+    s.homepage = "https://www.alida.com"
     s.license = { :type => 'MIT', :file => 'LICENSE' }
-    s.author             = { 'DineshRSystems' => 'Dinesh.Kumar@rsystems.com' }
-    s.source       = { :git => "https://github.com/vcilabs/touchpoint-kit-ios.git", :tag => "#{s.version}" }
+    s.author = { 'Alida' => 'mobileapp@alida.com' }
+    s.source = { :git => "https://github.com/vcilabs/touchpoint-kit-ios.git", :tag => "#{s.version}" }
     s.public_header_files = "TouchPointKit.xcframework/*/TouchPointKit.framework/Headers/*.{h,m,swift}"
     s.source_files = "TouchPointKit.xcframework/*/TouchPointKit.framework/Headers/*.{h,m,swift}"
     s.vendored_frameworks = "TouchPointKit.xcframework"
