@@ -37,7 +37,7 @@ A: The user will stay on the same screen of the app without any change in the st
 - Q: What happens if the user closes the activity without completing the activity?<br/>
 A: The SDK won’t show the same banner again to the user and it is marked as “Activity Collapsed”, which means the user closed the activity without completing it.
 - Q: What happens if the user taps the X to close the banner without opening the activity?<br/>
-A: The SDK tracks this event as “Activity Collapsed” and won’t show the same banner again.
+A: The SDK tracks this event as “Banner Dismissed” and won’t show the same banner again.
 - Q: Can the position of the banner be changed?<br/>
 A: Not at this time. All banners render on the bottom of the screen.
 - Q: How many banners will users see at any time?<br/>
