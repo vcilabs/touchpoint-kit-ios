@@ -1,5 +1,7 @@
 # Touchpoint Mobile SDK
-The purpose of the Touchpoint mobile SDK is to create an integration between a mobile app and Touchpoint. This integration enables the ability to publish and manage the Touchpoint activities that are displayed in a mobile app without the need to release a new version of the mobile app or make any code changes.
+The purpose of the Touchpoint mobile SDK is to create an integration between a mobile app and Alida Touchpoint. This integration enables the ability to publish and manage the Touchpoint activities that are displayed in a mobile app without the need to release a new version of the mobile app or make any code changes.
+
+Important concepts regarding Touchpoint can be found [here](https://touchpoint.help.alida.com/redirect.html#9C2DA302D89B4DCD8DE1377F84A07BD1). Some of these concepts are also described briefly below but the link above has a more thorough description.
 
 ## Minimum Requirements
 - iOS version 10.0
@@ -7,186 +9,355 @@ The purpose of the Touchpoint mobile SDK is to create an integration between a m
 ## Sample App
 https://github.com/vcilabs/touchpointkit-sample-ios
 
-## Glossary
-- Touchpoint activity: an activity created by a user via the Touchpoint dashboard.
-- Touchpoint distribution: a distribution defines how an activity is propagated amongst respondents and manages the publishing lifecycle. A distribution can have different types, in this case it would be a mobile distribution. A distribution is linked to a Touchpoint activity.
-- Screen name: a unique label given to a specific screen/view/page on a mobile app. Some examples are: Login, Product List, Product Detail, or Settings. A screen can be assigned to a particular Touchpoint distribution so that different activities can be displayed in different screens in your app.
-- Visitor: the end user interacting with the mobile app. The app is able to set any arbitrary attributes for the current visitor. Some examples are: email, an internal unique identifier, shoe size, etc. These attributes are sent to Touchpoint and can be exported by Touchpoint admins.
-- Banner: a UI component that the SDK can render at any time on any screen without a need for code change to the mobile app. Clicking on a banner opens a Touchpoint activity inside a webview.  A banner is linked to both a Touchpoint distribution and a screen. A banner has three main attributes:
-    - Style: what does the banner look like on the mobile app? The style object includes text colour and background colour.
-    - Caption: the text that is shown on the banner.
-    - Screen name: which screen in the mobile app should show which particular banner.
-- Custom components: UI components developed by integrators of the mobile SDK in their own mobile app codebase. Clicking on or otherwise invoking these components will open a Touchpoint activity inside of a webview.
-- Tracking Visitors: a mechanism on the SDK used to track the visitors’ interactions with activities rendered by the SDK. The purpose of which is to ensure visitors don’t see the banners and custom components again if they have already completed the activity. The SDK uses device IDs on iOS and Android to track visitors’ activity.
-
-## Methods for Triggering Touchpoint Activities
-There are two ways to trigger Touchpoint activities using the mobile SDK: banners and custom components.
-
-### Banners
-Banners are designed with minimizing the integrator’s development effort in mind. Once integrated into the app there are no further code changes required; swapping out activities on the various mobile app screens can be controlled without any code change by invoking APIs on Touchpoint.
-
-A banner has the following properties:
-1. Screen name: the screen in the mobile app on which the banner should be shown.
-1. Caption: the caption text to render inside the banner.
-1. Font colour: the colour of the text in the banner.
-1. Background colour: the colour used for the banner’s main container.
-
-#### Banners FAQ
-- Q: What happens after the user closes the activity?<br/>
-A: The user will stay on the same screen of the app without any change in the state of the app.
-- Q: What happens if the user closes the activity without completing the activity?<br/>
-A: The SDK won’t show the same banner again to the user and it is marked as “Activity Collapsed”, which means the user closed the activity without completing it.
-- Q: What happens if the user taps the X to close the banner without opening the activity?<br/>
-A: The SDK tracks this event as “Banner Dismissed” and won’t show the same banner again.
-- Q: Can the position of the banner be changed?<br/>
-A: Not at this time. All banners render on the bottom of the screen.
-- Q: How many banners will users see at any time?<br/>
-A: As a rule only one banner will be displayed on a screen at any one time. If there are multiple banners published to the same screen (which the SDK distinguishes using the screen name), the user sees only one banner on each visit. The next time they visit the same screen they will see the next banner.
-
-### Custom Components 
-Custom components are designed to enable as many different use cases as possible by giving more control to the integrator. Whereas banners have specific look, positioning, and targeting behaviours, custom components allow the integrator to write their own behavioural logic and UI components to handle these functions. This allows the integrator to fully align the look and feel of their app.
-
-Custom components can use any lifecycle event in an app to trigger a Touchpoint activity, such as a button tap, a page load, a timer going off, etc. Any custom logic can run before triggering the activity as well, such as only triggering an activity if a visitor’s attributes match certain criteria.
-
-#### Custom Components FAQ
-- Q: How many custom components can be displayed on the same screen at the same time?<br/>
-A: Only one custom component per screen. The SDK will open the activity assigned to the screen and since the screen is unique there can’t be more than one custom component on the same screen.
-- Q: Can a custom component be persistent in that it will trigger the activity even if the visitor has already seen it?<br/>
-A: This scenario is useful for a use case like a “collect feedback” button where you always want the user to be able to respond to the activity. There is an “always_show” property in distributions which forces the SDK to open the distribution regardless of how many times the visitor has completed/closed that activity.
-
 ## Installation using Pods
-Include the following in your `Podfile`:
+Include the following in your `Podfile`. To determine the latest tag please see https://github.com/vcilabs/touchpoint-kit-ios/tags.
 
 ```pod
 pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '0.1.8'
 ```
 
-And run `pod install`
+Then run `pod install`
 
 ## Installation using SPM
-Inside the XCode package manager, add the following URL: `https://github.com/vcilabs/touchpoint-kit-ios`.
+Inside the XCode package manager, add the following URL: `https://github.com/vcilabs/touchpoint-kit-ios`. To determine the latest tag please see https://github.com/vcilabs/touchpoint-kit-ios/tags.
+
+## Concepts
+A central design goal of the SDK is to require only an upfront effort from the mobile app developer to "Touchpoint enable" various screens in the mobile app, and eliminate any ongoing effort related to switching which particular activity is being shown. The Touchpoint admin is able to switch the Touchpoint activity with no development effort required.
+* Triggers: a trigger is how a Touchpoint activity gets activated and displayed to the user. There are three different types of triggers that are supported in the SDK.
+    * Banner: a Banner is displayed after a user navigates to a particular screen. A UI element is shown at the bottom of the screen with a call to action. Tapping the banner will display the Activity.
+    * Pop-up: a Pop-up is displayed after a user navigates to a particular screen (after an optional delay). There is no UI component to a Pop-up, the Touchpoint activity simply displays.
+    * Custom Component: a Custom Component is a way to trigger a Touchpoint activity during any arbitrary lifecycle event and is fully under the developer's control. An activity can be triggered after a button tap, after the user visits a screen for the 2nd time, or any other custom logic.
+* Screens: a Screen is a page or view in your mobile app, such as the home screen, product list screen, product details screen, settings screen, etc. You can designate any screen in your mobile app as being available to display a Touchpoint activity.
+* Components: a component is some UI element on a screen in your mobile app. This could be something like a button, or something more abstract like the number of times a user has visited a particular screen.
+* Targeting: it is possible for the Touchpoint admin to target particular Touchpoint activities based on certain User Attributes of the current user of the app. The User Attributes of the current user can be defined in the mobile app and are then used by Touchpoint to perform targeting.
+
+### Putting It All Together
+As a developer of a mobile app you can designate which Screens and which Screen Components are capable of triggering Touchtpoint activities. You don't need to be concerned about which specific Touchpoint activity is assigned to a particular screen as that is controlled by the Touchpoint admin.
+
+If the desire is to have a Banner or Pop-up activity on a particular screen you will only need to define and provide a screen name. If using a Custom Component you will need to provide both a screen name and a component name. For example:
+
+```swift
+let screenComponents = [
+        [ "screenName": "Home" ],
+        [ "screenName": "Settings", "componentName": "Lightbulb" ],
+        [ "screenName": "ProductList" ],
+    ]
+```
+
+Here we are defining the `Home` screen and `ProductList` screen as being able to display Banner and Pop-up types of triggers. Then on our `Settings` screen we have a button we've named `Lightbulb` that is now able to display a Custom Component trigger. A Screen can support multiple Components.
 
 ## Implementation
+
+### Initial Setup
+
 In the AppDelegate class, import the SDK using: `import TouchPointKit`. Then In the `didFinishLaunchingWithOptions` function add the following initialization code.
 
 ```swift
-//SWIFT
-let apiKey = API_KEY
+// API key and secret are provided by the Touchpoint UI
+let apiKey = API_KEY 
 let apiSecret = API_SECRET
-let podName = TouchPointPods.eu2 // na1, na2, eu1, eu2, ap2
-let screenNames = ["Screen1", "Screen2"]
-let visitor = ["id": "12345", "email": "ios_visitor@example.com", "favorite_food": "oranges"]
 
-TouchPointActivity.shared.configure(apiKey: apiKey,
-                                    apiSecret: apiSecret,
-                                    podName: podName,
-                                    screenNames: screenNames,
-                                    visitor: visitor)
+// The pod is the geographical region hosting your instance of Touchpoint.
+// Easiest determined from your URL while logged in, e.g. eu2.alida.com
+// Valid values are: na1, na2, eu1, eu2, ap2, ap3
+let podName = TouchPointPods.eu2 
+
+// These are the Screens and Screen Components in your mobile app that you 
+// designate as being able to render Touchpoint activities.
+let screenComponents = [
+        [ "screenName": "Home" ],
+        [ "screenName": "Settings", "componentName": "Lightbulb" ],
+        [ "screenName": "ProductList" ],
+    ]
+
+// The visitor payload describes the current user of the app. The "id"
+// is used to help determine if this particular user has already
+// seen certain activities and should be a unique identifier.
+// "userAttributes" are the targeting parameters. "type" is the data type
+// found in the "value". The data type is required as Touchpoint has
+// various operators that make sense for certain data types and not 
+// others, such as "greater than" or "less than" for numbers.
+// Valid values are number, boolean, string and date.
+let visitor = [
+        "id": "12345",
+        "userAttributes": [ // These are used in targeting
+            [
+                "key": "age", 
+                "type": "number",
+                "value": "53"
+            ],
+            [
+                "key": "isLoyaltyMember",
+                "type": "boolean",
+                "value": "true"
+            ],
+            [
+                "key": "city",
+                "type": "string",
+                "value": "Springfield"
+            ],
+            [
+                "key": "previousVisitDate",
+                "type": "date",
+                "value": "2022-04-11T21:51:34+0000"
+            ]
+        ]
+    ] as [String : Any]
+
+TouchPointActivity.shared.configure(
+    apiKey: apiKey,
+    apiSecret: apiSecret,
+    podName: podName,
+    screenComponents: screenComponents,
+    visitor: visitor)
  
-// Note: the following are optional properties for developer convenience
+// The following are optional properties for developer convenience
 
-// For testing you can set this property to false so that the API will not filter data based on visitor id and uuid
-TouchPointActivity.shared.shouldApplyAPIFilter = false
+// Should be "false" in production and is "false" by default.
+// Touchpoint generally won't show an activity to the same user twice which
+// can make it tricky to test. Setting this to "true" makes it
+// possible for a user to be served the same activity more than once.
+TouchPointActivity.shared.disableAPIFilter = false
 
-// To disable wkwebview caching, set to true
-TouchPointActivity.shared.disableCaching = true
+// To disable wkwebview caching, set to "true". "false" by default.
+TouchPointActivity.shared.disableCaching = false
 
-// To change banner height, you can set this property
-TouchPointActivity.shared.defaultBannerHeight = 50
-
-// To enable debug logs, set this property to true
+// Logs at debug level are silenced by default. To enable debug logs, 
+// set this to "true". "false" by default.
 TouchPointActivity.shared.enableDebugLogs = true
 
-// If status bar style is dark, set this property to false
+// Prevents any logs being generated, default is "false".
+TouchPointActivity.shared.disableAllLogs = false
+
+// If status bar style is dark, set this property to "false". "true" by
+// default.
 TouchPointActivity.shared.isStatusBarStyleLight = false
+
+// The height of the banner UI element in pixels. Default is "70".
+TouchPointActivity.shared.defaultBannerHeight = 50
 ```
 
-```objc
-// Objective-C
-NSString *apiKey = API_KEY;
-NSString *apiSecret = API_SECRET;
-TouchPointPods pod = TouchPointPods.eu2; // na1, na2, eu1, eu2, ap2
-NSArray *screens = [[NSArray alloc] initWithObjects:@"Demo 1", @"Demo 2"];
-NSDictionary *visitorDict = [[NSDictionary alloc] initWithObjectsAndKeys:@"id",@"12345",@"email",@"ios_visitor@example.com", nil];
+#### NOTE
+Do not leverage visitor attributes to pass personally identifying information (PII) into Touchpoint. To protect visitor privacy, do not pass data into Touchpoint that could be considered as personally identifiable information (PII). PII includes, but is not limited to, information such as social security numbers, personal home addresses, credit card numbers, financial account numbers, street address, etc.
 
-[[TouchPointActivity shared] configureWithApiKey: apiKey apiSecret: apiSecret podName: pod screenNames: screens visitor: visitorDict];
+### Triggering Banners and Pop-ups
 
-// Note: the following are optional properties for developer convenience
-
-// For testing you can set this property to false so that the API will not filter data based on visitor id and uuid
-[TouchPointActivity shared].shouldApplyAPIFilter = false;
-
-// To disable wkwebview caching, set o true
-[TouchPointActivity shared].disableCaching = true;
-
-// To change banner height, you can set this property
-[TouchPointActivity shared].defaultBannerHeight = 50;
-
-// To enable debug logs, set this property to true
-[TouchPointActivity shared].enableDebugLogs = true;
-
-// If status bar style is dark, set this property to false
-[TouchPointActivity shared].isStatusBarStyleLight = false;
-```
-
-Where:
-- The values for `API_KEY`, and `API_SECRET` will come from the API calls made above.
-- `pod_name`: the “pod” that the Touchpoint instance belongs to. This can be determined from the URL bar when you are logged into Touchpoint, such as https://app.eu2.visioncritical.com/touchpoint. Can be one of: `na1`, `na2`, `eu1`, `eu2`, `ap2`.
-
-For a banner workflow you will just need to tell the SDK which screen is currently visible. To do this import the SDK in a `View` or `ViewController` using: `import TouchPointKit`, and set the screen using:
+For Banner and Pop-up triggers you will just need to tell the SDK which screen is currently visible. To do this import the SDK in a `View` or `ViewController` using: `import TouchPointKit`, and set the screen using the below, preferably in the `viewDidLoad` function:
 
 ```swift
-//SWIFT
-TouchPointActivity.shared.setScreenName(screenName: SCREEN_NAME)
-```
-
-```objc
-// Objective-C
-[[TouchPointActivity shared] setScreenNameWithScreenName:SCREEN_NAME];
-```
-
-This will look for any banner for the specified screen (`SCREEN_NAME`) and display the banner automatically.
-
-If the custom component method is preferred open a Touchpoint activity directly by invoking the following method:
-
-```swift
-//SWIFT
-TouchPointActivity.shared.openActivityForScreen(screenName: SCREEN_NAME, delegate: self)
-```
-
-```objc
-// Objective-C
-[[TouchPointActivity shared] openActivityForScreenWithScreenName: SCREEN_NAME delegate: self];
-```
-
-`TouchPointActivityCompletionDelegate` is required to receive a callback when the Touchpoint activity has completed. Otherwise pass `nil` to the delegate. The following is the `TouchPointActivityCompletionDelegate` delegate method.
-
-```swift
-//SWIFT
-public func didActivityCompleted() {
-    // Calls when TouchPoint activity is completed.
+override func viewDidLoad() {
+    super.viewDidLoad()
+    TouchPointActivity.shared.setScreenName(screenName: SCREEN_NAME)
 }
 ```
 
-```objc
-// Objective-C
-- (void)didActivityCompleted {
-    // Calls when TouchPoint activity is completed.
-}
-```
+Any Banner or Pop-up assigned to the specified screen will be triggered and display automatically.
 
-Before calling the `openActivityForScreen` function, it is possible to check if a Touchpoint activity needs to be shown using the following method:
+Since Pop-ups can be configured by the Touchpoint admin to trigger only after a specified amount of time has passed, it is possible for a user to navigate to a screen and quickly navigate away before the Pop-up is shown. The Pop-up will then be displayed on the second screen, which may be undesired. To prevent this it is possible to cancel the Pop-up when the first screen is being dismissed:
 
 ```swift
-//SWIFT
-if TouchPointActivity.shared.shouldShowActivity(screenName: SCREEN_NAME) {
-    // Call openActivity function of TouchPointActivity
+TouchPointActivity.shared.cancelPopupForScreen(screenName: SCREEN_NAME)
+```
+
+### Triggering Custom Components
+For the Custom Component trigger you can hook into any lifecycle event and invoke the Touchpoint activity directly:
+
+```swift
+TouchPointActivity.shared.openActivityForScreenComponent(screenName: SCREEN_NAME, componentName: COMPONENT_NAME, delegate: self)
+```
+
+Before calling the `openActivityForScreenComponent` function, it is possible to check if a Touchpoint activity needs to be shown using the following method:
+
+```swift
+if TouchPointActivity.shared.shouldShowActivity(screenName: SCREEN_NAME, componentName: COMPONENT_NAME) {
+    // Call openActivityForScreenComponent
 }
 ```
 
+This will allow you to manage how you render out your screen, for example by hiding or showing a button based on whether or not a Touchpoint activity is availble.
+
+## React Native Integration for iOS
+
+In your React Native project will be a folder named `ios`. In this folder will be the iOS native part of your app. To install this SDK into your app use one of the methods described above, either via [Podfile](#installation-using-pods) or [SPM](#installation-using-spm)
+
+In the `AppDelegate.m` file import the SDK by adding an import line at the top of the file: `@import TouchPointKit;` and add the following code snippet in `AppDelegate.m`'s `didFinishLaunchingWithOptions` function.
+
+Please see the [Initial Setup](#initial-setup) section above for a description of how to use the various parameters in the snippet below and what their usage is.
+
 ```objc
-// Objective-C
-if ([[TouchPointActivity shared] shouldShowActivityWithScreenName: SCREEN_NAME]) {
-    // Call openActivityWithScreenName function of TouchPointActivity
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    //...
+
+    NSString *apiKey = @"API_KEY";
+    NSString *apiSecret = @"API_SECRET";
+
+    // Possible values: TouchPointPodsNA1, TouchPointPodsNA2, TouchPointPodsEU1,
+    // TouchPointPodsEU2, TouchPointPodsAP2, TouchPointPodsAP3
+    TouchPointPods pod = TouchPointPodsEU2;
+
+    // Example user attributes used for targeting, see the integration details
+    // above for more details.
+    NSArray *userAttributes = @[
+        @{ @"key": @"age", @"type": @"number", @"value": @"53" },
+        @{ @"key": @"isLoyaltyMember", @"type": @"boolean", @"value": @"true" },
+        @{ @"key": @"city", @"type": @"string", @"value": @"Springfield" },
+        @{ @"key": @"previousVisitDate", @"type": @"date", @"value": @"2022-04-11T21:51:34+0000" },
+    ];
+    NSDictionary *visitor = [[NSDictionary alloc] initWithObjectsAndKeys:@"12345", @"id", userAttributes, @"userAttributes", nil];
+
+    // Example screens and components
+    NSArray *screenComponents = @[
+        @{ @"screenName": @"Banner Screen" },
+        @{ @"screenName": @"Popup Screen" },
+        @{ @"screenName": @"Custom Component Screen", @"componentName": @"Button 1" },
+        @{ @"screenName": @"Custom Component Screen", @"componentName": @"Button 2" },
+        @{ @"screenName": @"Custom Component Screen", @"componentName": @"Button 3" },
+    ];
+
+    [[TouchPointActivity shared] configureWithApiKey: apiKey apiSecret: apiSecret podName: pod screenComponents: screenComponents visitor: visitor];
+
+    // Optional configuration elements, see integration details above for more details
+    [TouchPointActivity shared].disableAPIFilter = false;
+    [TouchPointActivity shared].disableCaching = false;
+    [TouchPointActivity shared].enableDebugLogs = true;
+    [TouchPointActivity shared].disableAllLogs = false;
+    [TouchPointActivity shared].isStatusBarStyleLight = false;
+    [TouchPointActivity shared].defaultBannerHeight = 50;
+    
+    //...
 }
+```
+
+Now create two files inside your iOS project name `TouchPointKitBridge.h` and `TouchPointKitBridge.m`. Add the following code to these files:
+
+```objc
+//  TouchPointKitBridge.h
+#import <Foundation/Foundation.h>
+#import <React/RCTBridgeModule.h>
+#import <React/RCTEventEmitter.h>
+@import TouchPointKit;
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface TouchPointKitBridge : RCTEventEmitter <RCTBridgeModule, TouchPointActivityCompletionDelegate>
+
+@end
+
+NS_ASSUME_NONNULL_END
+```
+
+```objc
+//  TouchPointKitBridge.m
+#import "TouchPointKitBridge.h"
+
+@implementation TouchPointKitBridge
+{
+  bool hasListeners;
+}
+
+// Will be called when this module's first listener is added.
+-(void)startObserving {
+    hasListeners = YES;
+}
+
+// Will be called when this module's last listener is removed, or on dealloc.
+-(void)stopObserving {
+    hasListeners = NO;
+}
+
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(setVisitor:(NSDictionary<NSString *, id> *)visitor)
+{
+  [TouchPointActivity shared].visitor = visitor;
+}
+
+RCT_EXPORT_METHOD(enableDebugLogs:(BOOL)enable)
+{
+  [TouchPointActivity shared].enableDebugLogs = enable;
+}
+
+RCT_EXPORT_METHOD(disableAllLogs:(BOOL)disable)
+{
+  [TouchPointActivity shared].disableAllLogs = disable;
+}
+
+RCT_EXPORT_METHOD(disableAPIFilter:(BOOL)disableAPIFilter)
+{
+  [TouchPointActivity shared].disableAPIFilter = disableAPIFilter;
+}
+
+RCT_EXPORT_METHOD(disableCaching:(BOOL)caching)
+{
+  [TouchPointActivity shared].disableCaching = caching;
+}
+
+RCT_EXPORT_METHOD(isStatusBarStyleLight:(BOOL)isStatusBarStyleLight)
+{
+  [TouchPointActivity shared].isStatusBarStyleLight = isStatusBarStyleLight;
+}
+
+RCT_EXPORT_METHOD(defaultBannerHeight:(CGFloat)defaultBannerHeight)
+{
+  [TouchPointActivity shared].defaultBannerHeight = defaultBannerHeight;
+}
+
+
+RCT_EXPORT_METHOD(setScreen:(NSString *)screenName)
+{
+  [[TouchPointActivity shared] setScreenNameWithScreenName:screenName delegate: self];
+}
+
+RCT_EXPORT_METHOD(openActivity:(NSString *)screenName componentName:(NSString *)componentName)
+{
+  if ([[TouchPointActivity shared] shouldShowActivityWithScreenName: screenName componentName: componentName]) {
+    [[TouchPointActivity shared] openActivityForScreenComponentWithScreenName: screenName componentName:componentName delegate: self];
+  }
+}
+
+- (dispatch_queue_t)methodQueue
+{
+    return dispatch_get_main_queue();
+}
+
+- (void) onActivityComplete {
+  if (hasListeners) {
+    [self sendEventWithName:@"onActivityComplete" body:@"ActivityCompleted"];
+  }
+}
+
+- (NSArray<NSString *> *)supportedEvents {
+  return @[@"onActivityComplete"];
+}
+
+@end
+```
+
+From your App.js call `TouchPointKitBridge` methods using `NativeModules`.
+
+```javascript
+import {
+  NativeModules,
+  NativeEventEmitter,
+} from 'react-native';
+
+// Register for event listening from SDK (activity complete event)
+const { TouchPointKitBridge } = NativeModules;
+const eventEmitter = new NativeEventEmitter(TouchPointKitBridge);
+const subscription = eventEmitter.addListener(
+  'onActivityComplete',
+  onActivityComplete,
+);
+
+const onActivityComplete = event => {
+  console.log('onActivityComplete called');
+  console.log(event);
+};
+
+// To trigger a Pop-up or Banner
+NativeModules.TouchPointKitBridge.setScreen('SCREEN_NAME');
+
+// To trigger a custom component
+NativeModules.TouchPointKitBridge.openActivity('SCREEN_NAME', 'COMPONENT_NAME');
 ```
