@@ -11,21 +11,23 @@ import UIKit
 import WebKit
 import os
 @objc public protocol TouchPointActivityCompletionDelegate : AnyObject {
-  @objc func didActivityCompleted()
+  @objc func onActivityComplete()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TouchPointActivity : ObjectiveC.NSObject {
   @objc public var visitor: [Swift.String : Swift.String]
+  @objc public var userAttributes: [Swift.String : Swift.String]
   @objc public static var shared: TouchPointKit.TouchPointActivity
-  @objc public var shouldApplyAPIFilter: Swift.Bool
+  @objc public var disableAPIFilter: Swift.Bool
   @objc public var enableDebugLogs: Swift.Bool
   @objc public var disableAllLogs: Swift.Bool
   @objc public var disableCaching: Swift.Bool
   @objc public var defaultBannerHeight: CoreGraphics.CGFloat
   @objc public var isStatusBarStyleLight: Swift.Bool
-  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenNames: [Swift.String] = [], visitor: [Swift.String : Swift.String] = [:])
-  @objc public func setScreenName(screenName: Swift.String, banner: Swift.Bool = true)
-  @objc public func openActivityForScreen(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
-  @objc public func shouldShowActivity(screenName: Swift.String, banner: Swift.Bool = false) -> Swift.Bool
+  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenComponents: [[Swift.String : Swift.String]] = [], visitor: [Swift.String : Any] = [:])
+  @objc public func setScreenName(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
+  @objc public func cancelPopupForScreen(screenName: Swift.String)
+  @objc public func openActivityForScreenComponent(screenName: Swift.String, componentName: Swift.String? = nil, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
+  @objc public func shouldShowActivity(screenName: Swift.String, componentName: Swift.String? = nil) -> Swift.Bool
   @objc public func openActivityForUrl(distUrl: Swift.String?, useBannerStyling: Swift.Bool = true, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil, alwaysShow: Swift.Bool = false)
   @objc public func cacheActivityForUrl(_ distUrl: Swift.String, alwaysShow: Swift.Bool = false)
   @objc public func isActivitySeen(distUrl: Swift.String?) -> Swift.Bool
@@ -37,6 +39,7 @@ import os
   case eu1
   case eu2
   case ap2
+  case ap3
   case dev1
   case dev2
   case sit1

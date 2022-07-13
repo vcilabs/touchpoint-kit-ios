@@ -216,10 +216,11 @@ enum TouchPointPods : NSInteger;
 SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull visitor;
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributes;
 /// Returns the shares instance of TouchPointActivity
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointActivity * _Nonnull shared;)
 + (TouchPointActivity * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic) BOOL shouldApplyAPIFilter;
+@property (nonatomic) BOOL disableAPIFilter;
 @property (nonatomic) BOOL enableDebugLogs;
 @property (nonatomic) BOOL disableAllLogs;
 @property (nonatomic) BOOL disableCaching;
@@ -234,35 +235,43 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
-/// \param screenNames (optional) Screen names on which TouchPoint banner needs to be displayed
+/// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenNames:(NSArray<NSString *> * _Nonnull)screenNames visitor:(NSDictionary<NSString *, NSString *> * _Nonnull)visitor;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
-/// banner needs to be displayed
+/// banner or popup needs to be displayed
 /// \param screenName Screen name of current controller
 ///
-/// \param banner set it true for  banner, false for custom component
+/// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 ///
-- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName banner:(BOOL)banner;
+- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+/// Call this method in to cancel any popup that may be associated with the current screen
+/// \param screenName Screen name of current controller
+///
+- (void)cancelPopupForScreenWithScreenName:(NSString * _Nonnull)screenName;
 /// Call this method if you want to open TouchPoint activity using custom component
 /// \param screenName Screen name of current controller
+///
+/// \param componentName Component name of current controller
 ///
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 /// completed so that you can hide your custom component
 ///
-- (void)openActivityForScreenWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
 /// Call this method to check if any TouchPoint activity pending to be
 /// displayed for current screen, if you want to open TouchPoint activity
 /// using custom component
 /// \param screenName Screen name of current controller
 ///
+/// \param componentName Component name of current controller
+///
 ///
 /// returns:
 /// true if TouchPoint activity is not available or not seen by
 /// user for current screen
-- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName banner:(BOOL)banner SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName SWIFT_WARN_UNUSED_RESULT;
 /// Open touchpoint activity by distribution url
 /// \param distUrl distribution url
 ///
@@ -287,7 +296,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 
 SWIFT_PROTOCOL("_TtP13TouchPointKit36TouchPointActivityCompletionDelegate_")
 @protocol TouchPointActivityCompletionDelegate
-- (void)didActivityCompleted;
+- (void)onActivityComplete;
 @end
 
 typedef SWIFT_ENUM(NSInteger, TouchPointPods, open) {
@@ -296,10 +305,11 @@ typedef SWIFT_ENUM(NSInteger, TouchPointPods, open) {
   TouchPointPodsEu1 = 2,
   TouchPointPodsEu2 = 3,
   TouchPointPodsAp2 = 4,
-  TouchPointPodsDev1 = 5,
-  TouchPointPodsDev2 = 6,
-  TouchPointPodsSit1 = 7,
-  TouchPointPodsPub = 8,
+  TouchPointPodsAp3 = 5,
+  TouchPointPodsDev1 = 6,
+  TouchPointPodsDev2 = 7,
+  TouchPointPodsSit1 = 8,
+  TouchPointPodsPub = 9,
 };
 
 
@@ -527,10 +537,11 @@ enum TouchPointPods : NSInteger;
 SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull visitor;
+@property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributes;
 /// Returns the shares instance of TouchPointActivity
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointActivity * _Nonnull shared;)
 + (TouchPointActivity * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
-@property (nonatomic) BOOL shouldApplyAPIFilter;
+@property (nonatomic) BOOL disableAPIFilter;
 @property (nonatomic) BOOL enableDebugLogs;
 @property (nonatomic) BOOL disableAllLogs;
 @property (nonatomic) BOOL disableCaching;
@@ -545,35 +556,43 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
-/// \param screenNames (optional) Screen names on which TouchPoint banner needs to be displayed
+/// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenNames:(NSArray<NSString *> * _Nonnull)screenNames visitor:(NSDictionary<NSString *, NSString *> * _Nonnull)visitor;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
-/// banner needs to be displayed
+/// banner or popup needs to be displayed
 /// \param screenName Screen name of current controller
 ///
-/// \param banner set it true for  banner, false for custom component
+/// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 ///
-- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName banner:(BOOL)banner;
+- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+/// Call this method in to cancel any popup that may be associated with the current screen
+/// \param screenName Screen name of current controller
+///
+- (void)cancelPopupForScreenWithScreenName:(NSString * _Nonnull)screenName;
 /// Call this method if you want to open TouchPoint activity using custom component
 /// \param screenName Screen name of current controller
+///
+/// \param componentName Component name of current controller
 ///
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 /// completed so that you can hide your custom component
 ///
-- (void)openActivityForScreenWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
 /// Call this method to check if any TouchPoint activity pending to be
 /// displayed for current screen, if you want to open TouchPoint activity
 /// using custom component
 /// \param screenName Screen name of current controller
 ///
+/// \param componentName Component name of current controller
+///
 ///
 /// returns:
 /// true if TouchPoint activity is not available or not seen by
 /// user for current screen
-- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName banner:(BOOL)banner SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)shouldShowActivityWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName SWIFT_WARN_UNUSED_RESULT;
 /// Open touchpoint activity by distribution url
 /// \param distUrl distribution url
 ///
@@ -598,7 +617,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 
 SWIFT_PROTOCOL("_TtP13TouchPointKit36TouchPointActivityCompletionDelegate_")
 @protocol TouchPointActivityCompletionDelegate
-- (void)didActivityCompleted;
+- (void)onActivityComplete;
 @end
 
 typedef SWIFT_ENUM(NSInteger, TouchPointPods, open) {
@@ -607,10 +626,11 @@ typedef SWIFT_ENUM(NSInteger, TouchPointPods, open) {
   TouchPointPodsEu1 = 2,
   TouchPointPodsEu2 = 3,
   TouchPointPodsAp2 = 4,
-  TouchPointPodsDev1 = 5,
-  TouchPointPodsDev2 = 6,
-  TouchPointPodsSit1 = 7,
-  TouchPointPodsPub = 8,
+  TouchPointPodsAp3 = 5,
+  TouchPointPodsDev1 = 6,
+  TouchPointPodsDev2 = 7,
+  TouchPointPodsSit1 = 8,
+  TouchPointPodsPub = 9,
 };
 
 
