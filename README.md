@@ -13,7 +13,7 @@ https://github.com/vcilabs/touchpointkit-sample-ios
 Include the following in your `Podfile`. To determine the latest tag please see https://github.com/vcilabs/touchpoint-kit-ios/tags.
 
 ```pod
-pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '0.1.8'
+pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '1.0.0'
 ```
 
 Then run `pod install`
