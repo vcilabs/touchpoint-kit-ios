@@ -211,7 +211,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 enum TouchPointPods : NSInteger;
-@protocol TouchPointActivityCompletionDelegate;
+@protocol TouchPointActivityDelegate;
 
 SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
@@ -246,7 +246,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 ///
-- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityDelegate> _Nullable)delegate;
 /// Call this method in to cancel any popup that may be associated with the current screen
 /// \param screenName Screen name of current controller
 ///
@@ -259,7 +259,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 /// completed so that you can hide your custom component
 ///
-- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityDelegate> _Nullable)delegate;
 /// Call this method to check if any TouchPoint activity pending to be
 /// displayed for current screen, if you want to open TouchPoint activity
 /// using custom component
@@ -279,7 +279,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate delegate
 ///
-- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
+- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
 /// Preload touchpoint activity for distribution url
 /// \param distUrl distribution url
 ///
@@ -294,9 +294,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 @end
 
 
-SWIFT_PROTOCOL("_TtP13TouchPointKit36TouchPointActivityCompletionDelegate_")
-@protocol TouchPointActivityCompletionDelegate
-- (void)onActivityComplete;
+SWIFT_PROTOCOL("_TtP13TouchPointKit26TouchPointActivityDelegate_")
+@protocol TouchPointActivityDelegate
+- (void)onTouchPointActivityCollapse;
+@optional
+- (void)onTouchPointActivityComplete;
 @end
 
 typedef SWIFT_ENUM(NSInteger, TouchPointPods, open) {
@@ -532,7 +534,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 enum TouchPointPods : NSInteger;
-@protocol TouchPointActivityCompletionDelegate;
+@protocol TouchPointActivityDelegate;
 
 SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
@@ -567,7 +569,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 ///
-- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityDelegate> _Nullable)delegate;
 /// Call this method in to cancel any popup that may be associated with the current screen
 /// \param screenName Screen name of current controller
 ///
@@ -580,7 +582,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 /// completed so that you can hide your custom component
 ///
-- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityDelegate> _Nullable)delegate;
 /// Call this method to check if any TouchPoint activity pending to be
 /// displayed for current screen, if you want to open TouchPoint activity
 /// using custom component
@@ -600,7 +602,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate delegate
 ///
-- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
+- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
 /// Preload touchpoint activity for distribution url
 /// \param distUrl distribution url
 ///
@@ -615,9 +617,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 @end
 
 
-SWIFT_PROTOCOL("_TtP13TouchPointKit36TouchPointActivityCompletionDelegate_")
-@protocol TouchPointActivityCompletionDelegate
-- (void)onActivityComplete;
+SWIFT_PROTOCOL("_TtP13TouchPointKit26TouchPointActivityDelegate_")
+@protocol TouchPointActivityDelegate
+- (void)onTouchPointActivityCollapse;
+@optional
+- (void)onTouchPointActivityComplete;
 @end
 
 typedef SWIFT_ENUM(NSInteger, TouchPointPods, open) {
@@ -853,7 +857,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 
 enum TouchPointPods : NSInteger;
-@protocol TouchPointActivityCompletionDelegate;
+@protocol TouchPointActivityDelegate;
 
 SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
@@ -888,7 +892,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 ///
-- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)setScreenNameWithScreenName:(NSString * _Nonnull)screenName delegate:(id <TouchPointActivityDelegate> _Nullable)delegate;
 /// Call this method in to cancel any popup that may be associated with the current screen
 /// \param screenName Screen name of current controller
 ///
@@ -901,7 +905,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param delegate (optional) Delegate to get the callback when TouchPoint activity
 /// completed so that you can hide your custom component
 ///
-- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate;
+- (void)openActivityForScreenComponentWithScreenName:(NSString * _Nonnull)screenName componentName:(NSString * _Nullable)componentName delegate:(id <TouchPointActivityDelegate> _Nullable)delegate;
 /// Call this method to check if any TouchPoint activity pending to be
 /// displayed for current screen, if you want to open TouchPoint activity
 /// using custom component
@@ -921,7 +925,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param delegate delegate
 ///
-- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityCompletionDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
+- (void)openActivityForUrlWithDistUrl:(NSString * _Nullable)distUrl useBannerStyling:(BOOL)useBannerStyling delegate:(id <TouchPointActivityDelegate> _Nullable)delegate alwaysShow:(BOOL)alwaysShow;
 /// Preload touchpoint activity for distribution url
 /// \param distUrl distribution url
 ///
@@ -936,9 +940,11 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 @end
 
 
-SWIFT_PROTOCOL("_TtP13TouchPointKit36TouchPointActivityCompletionDelegate_")
-@protocol TouchPointActivityCompletionDelegate
-- (void)onActivityComplete;
+SWIFT_PROTOCOL("_TtP13TouchPointKit26TouchPointActivityDelegate_")
+@protocol TouchPointActivityDelegate
+- (void)onTouchPointActivityCollapse;
+@optional
+- (void)onTouchPointActivityComplete;
 @end
 
 typedef SWIFT_ENUM(NSInteger, TouchPointPods, open) {

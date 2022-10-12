@@ -10,8 +10,9 @@ import SystemConfiguration
 import UIKit
 import WebKit
 import os
-@objc public protocol TouchPointActivityCompletionDelegate : AnyObject {
-  @objc func onActivityComplete()
+@objc public protocol TouchPointActivityDelegate : AnyObject {
+  @objc func onTouchPointActivityCollapse()
+  @objc optional func onTouchPointActivityComplete()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TouchPointActivity : ObjectiveC.NSObject {
   @objc public var visitor: [Swift.String : Swift.String]
@@ -24,11 +25,11 @@ import os
   @objc public var defaultBannerHeight: CoreGraphics.CGFloat
   @objc public var isStatusBarStyleLight: Swift.Bool
   @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenComponents: [[Swift.String : Swift.String]] = [], visitor: [Swift.String : Any] = [:])
-  @objc public func setScreenName(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
+  @objc public func setScreenName(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityDelegate? = nil)
   @objc public func cancelPopupForScreen(screenName: Swift.String)
-  @objc public func openActivityForScreenComponent(screenName: Swift.String, componentName: Swift.String? = nil, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil)
+  @objc public func openActivityForScreenComponent(screenName: Swift.String, componentName: Swift.String? = nil, delegate: TouchPointKit.TouchPointActivityDelegate? = nil)
   @objc public func shouldShowActivity(screenName: Swift.String, componentName: Swift.String? = nil) -> Swift.Bool
-  @objc public func openActivityForUrl(distUrl: Swift.String?, useBannerStyling: Swift.Bool = true, delegate: TouchPointKit.TouchPointActivityCompletionDelegate? = nil, alwaysShow: Swift.Bool = false)
+  @objc public func openActivityForUrl(distUrl: Swift.String?, useBannerStyling: Swift.Bool = true, delegate: TouchPointKit.TouchPointActivityDelegate? = nil, alwaysShow: Swift.Bool = false)
   @objc public func cacheActivityForUrl(_ distUrl: Swift.String, alwaysShow: Swift.Bool = false)
   @objc public func isActivitySeen(distUrl: Swift.String?) -> Swift.Bool
   @objc deinit
