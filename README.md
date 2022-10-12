@@ -13,7 +13,7 @@ https://github.com/vcilabs/touchpointkit-sample-ios
 Include the following in your `Podfile`. To determine the latest tag please see https://github.com/vcilabs/touchpoint-kit-ios/tags.
 
 ```pod
-pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '1.0.0'
+pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '1.0.1'
 ```
 
 Then run `pod install`
@@ -23,6 +23,9 @@ Inside the XCode package manager, add the following URL: `https://github.com/vci
 
 ## Concepts
 A central design goal of the SDK is to require only an upfront effort from the mobile app developer to "Touchpoint enable" various screens in the mobile app, and eliminate any ongoing effort related to switching which particular activity is being shown. The Touchpoint admin is able to switch the Touchpoint activity with no development effort required.
+
+As a result of this decoupling there is never any reference to a particular activity in this SDK. All configuration and distribution for an activity happens by the Touchpoint admin inside the Touchpoint user interface.
+
 * Triggers: a trigger is how a Touchpoint activity gets activated and displayed to the user. There are three different types of triggers that are supported in the SDK.
     * Banner: a Banner is displayed after a user navigates to a particular screen. A UI element is shown at the bottom of the screen with a call to action. Tapping the banner will display the Activity.
     * Pop-up: a Pop-up is displayed after a user navigates to a particular screen (after an optional delay). There is no UI component to a Pop-up, the Touchpoint activity simply displays.
@@ -30,6 +33,10 @@ A central design goal of the SDK is to require only an upfront effort from the m
 * Screens: a Screen is a page or view in your mobile app, such as the home screen, product list screen, product details screen, settings screen, etc. You can designate any screen in your mobile app as being available to display a Touchpoint activity.
 * Components: a component is some UI element on a screen in your mobile app. This could be something like a button, or something more abstract like the number of times a user has visited a particular screen.
 * Targeting: it is possible for the Touchpoint admin to target particular Touchpoint activities based on certain User Attributes of the current user of the app. The User Attributes of the current user can be defined in the mobile app and are then used by Touchpoint to perform targeting.
+
+Banner and Pop-up types of triggers are out of the box methods for triggering an activity. This is meant to make integration easier at the cost of flexibility. A Custom Component requires some custom logic to trigger but it provides flexibility as the logic is fully under the control of the app developer.
+
+After a user finishes an activity the activity will be closed and the user will remain on the same screen with no change in state.
 
 ### Putting It All Together
 As a developer of a mobile app you can designate which Screens and which Screen Components are capable of triggering Touchtpoint activities. You don't need to be concerned about which specific Touchpoint activity is assigned to a particular screen as that is controlled by the Touchpoint admin.
@@ -175,6 +182,33 @@ if TouchPointActivity.shared.shouldShowActivity(screenName: SCREEN_NAME, compone
 ```
 
 This will allow you to manage how you render out your screen, for example by hiding or showing a button based on whether or not a Touchpoint activity is availble.
+
+### Callback Events
+The Touchpoint SDK offers two different callbacks that can be used to trigger custom logic as the user interacts with the activity.
+1. Collapse: when the user closes or collapses the activity. At this point the activity has just been removed from view and the user is back interacting with the app.
+2. Complete: when the user finishes the last question in the activity and the activity is considered done. The activity is now considered "complete" for reporting purposes in Touchpoint. The user is still viewing the activity.
+
+To implement these callbacks your class should subclass `TouchPointActivityDelegate` and implement the two functions `onTouchPointActivityCollapse` and `onTouchPointActivityComplete`. Note that `onTouchPointActivityComplete` is optional.
+
+Example:
+
+```swift
+class CustomComponentViewController: UIViewController, TouchPointActivityDelegate {
+    // ...
+    
+    func onTouchPointActivityComplete() {
+        let activityCompleteAlert: UIAlertView = UIAlertView(title: "Thanks for completing the activity!", message: "We really appreciate your feedback",
+                             delegate: self, cancelButtonTitle: "OK")
+        activityCompleteAlert.show()
+    }
+    
+    func onTouchPointActivityCollapse() {
+        curSelectedButton?.isEnabled = false
+    }
+
+    // ...    
+}
+```
 
 ## React Native Integration for iOS
 
