@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/TouchPointKit-Swift.h</key>
 		<data>
-		FAh/gIV5mhEBn2odZRX/qeSlrBU=
+		jr/ewh6xAc/GpfmS8K4m/Liw3ts=
 		</data>
 		<key>Headers/TouchPointKit.h</key>
 		<data>
@@ -14,79 +14,43 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6J66t9CI5QH6Bco0r5kWozWFviU=
+		b5LSYi/tPps+62w8rGKAz7p/5e8=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		zdLbohWmo6Gtl6UY1tgrR09ZrnE=
+		Hq0sIXIGzsqBGwYBzORUVDbnTOk=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		BdTYotKlVz4jNXfa/sJtDbvW7Wk=
+		+qJ2qEQyhHqHE2CYTUHo17Bc+zc=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		bTeXwV5q0FngwDytAsyrf4CIlE8=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftdoc</key>
-		<data>
-		zdLbohWmo6Gtl6UY1tgrR09ZrnE=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftinterface</key>
-		<data>
-		BdTYotKlVz4jNXfa/sJtDbvW7Wk=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftmodule</key>
-		<data>
-		bTeXwV5q0FngwDytAsyrf4CIlE8=
+		1zZZRg/xe5utCkVpAa9mScr5aLU=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<data>
-		qRpp6GdtM8lV0Y3dV36sQ5R6Bhs=
+		qXyTjuvpUxecKrDRLL6o19Kj7+k=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<data>
-		TwyDv0MuD3G8S2jd6ad1yvt0LQs=
+		V3GWGPBXoBqqjDrfevMMH32iY+o=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<data>
-		kvuqydsbhocDMPIsZZ2YXiy5fTY=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/i386.swiftdoc</key>
-		<data>
-		qRpp6GdtM8lV0Y3dV36sQ5R6Bhs=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/i386.swiftinterface</key>
-		<data>
-		TwyDv0MuD3G8S2jd6ad1yvt0LQs=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/i386.swiftmodule</key>
-		<data>
-		kvuqydsbhocDMPIsZZ2YXiy5fTY=
+		JhG+erEdoGhSu/m9xVyeNBwhubs=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		IdeZ2zr4NKPjU+S04afSXPT4ams=
+		yZMU6QWXJCiEEvRMsc6mQUosfZg=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		wkVqX2+52gKSf9NY2KIShVJGYw8=
+		BuIAewj3jToMzIBF2G9xT2h5F7M=
 		</data>
 		<key>Modules/TouchPointKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FygsQx+o2NegKLAyVrHqWa6HTAY=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		IdeZ2zr4NKPjU+S04afSXPT4ams=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		wkVqX2+52gKSf9NY2KIShVJGYw8=
-		</data>
-		<key>Modules/TouchPointKit.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		FygsQx+o2NegKLAyVrHqWa6HTAY=
+		gyGbyTwr+hN510xf7fSuduIrjFc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -94,11 +58,11 @@
 		</data>
 		<key>TouchPointBannerView.nib/objects-11.0+.nib</key>
 		<data>
-		t2bzmUhKDjcUyemDZ/sCORnD4Gw=
+		5XWvwNnP5ORPD/zJ4cgOXqOPgQc=
 		</data>
 		<key>TouchPointBannerView.nib/runtime.nib</key>
 		<data>
-		mjH6vyR5MCGx+M+bQ2EHkqlJ1bE=
+		Ebhg88jzXJklJRVOd9q3TZVg9vY=
 		</data>
 		<key>touchpoint.storyboardc/Info.plist</key>
 		<data>
@@ -106,11 +70,11 @@
 		</data>
 		<key>touchpoint.storyboardc/LTF-1C-6qe-view-9VU-q5-sWO.nib</key>
 		<data>
-		tUYQVfZjcE2Pkua7z1Z8TiTGLlo=
+		SKgcgBeYSDPO7qxK3EK73hJXCuM=
 		</data>
 		<key>touchpoint.storyboardc/TouchPointWebViewController.nib</key>
 		<data>
-		41rRaoy+Lel2E6kI8MMMcG44sTA=
+		YFwiGxwV3a3by34p6NAj06FOpNA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -119,11 +83,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FAh/gIV5mhEBn2odZRX/qeSlrBU=
+			jr/ewh6xAc/GpfmS8K4m/Liw3ts=
 			</data>
 			<key>hash2</key>
 			<data>
-			k7YmSoQWu3f/A7i/G8n/XBn4FEebK9Kq6nB/A5dAvX4=
+			29GYunNXWCxH/A+s42ON3D0XqT8L4IH8zWQV67gwPUA=
 			</data>
 		</dict>
 		<key>Headers/TouchPointKit.h</key>
@@ -141,198 +105,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zdLbohWmo6Gtl6UY1tgrR09ZrnE=
+			Hq0sIXIGzsqBGwYBzORUVDbnTOk=
 			</data>
 			<key>hash2</key>
 			<data>
-			9DVpz/mykfW7kGDHGcscEAp09jc5DoOOzbMbTzmOPpk=
+			JBbQ278w71IBrQhA3HfY2rSbY+wSw5pQOmOXh1a6IrQ=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			BdTYotKlVz4jNXfa/sJtDbvW7Wk=
+			+qJ2qEQyhHqHE2CYTUHo17Bc+zc=
 			</data>
 			<key>hash2</key>
 			<data>
-			lRLKeaMRDhWrliz1lfA7z0Rom11sDVOt5eFmJN/a8As=
+			yCImqXksOsoOSfiTka4FfPM5b29/xAfIsJia1uPnHCM=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			bTeXwV5q0FngwDytAsyrf4CIlE8=
+			1zZZRg/xe5utCkVpAa9mScr5aLU=
 			</data>
 			<key>hash2</key>
 			<data>
-			yhvhCO/7Y21ElPoLKjpFXmbX4AJjMT6mkZw71CTTt74=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			zdLbohWmo6Gtl6UY1tgrR09ZrnE=
-			</data>
-			<key>hash2</key>
-			<data>
-			9DVpz/mykfW7kGDHGcscEAp09jc5DoOOzbMbTzmOPpk=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			BdTYotKlVz4jNXfa/sJtDbvW7Wk=
-			</data>
-			<key>hash2</key>
-			<data>
-			lRLKeaMRDhWrliz1lfA7z0Rom11sDVOt5eFmJN/a8As=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/arm64.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			bTeXwV5q0FngwDytAsyrf4CIlE8=
-			</data>
-			<key>hash2</key>
-			<data>
-			yhvhCO/7Y21ElPoLKjpFXmbX4AJjMT6mkZw71CTTt74=
+			N2IzEVSdgV5WjAfNYPQCm0NvWvlHo/SUAwZhWc0u4O4=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/i386-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			qRpp6GdtM8lV0Y3dV36sQ5R6Bhs=
+			qXyTjuvpUxecKrDRLL6o19Kj7+k=
 			</data>
 			<key>hash2</key>
 			<data>
-			IIVOJUttMvOHnQJxrxUdDi3jSVI31JcyU7u6Ssr9gw4=
+			OJB98/nI6fRdYvkb+zKLf6RieDPFc6+fsgaWF4j+BOE=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/i386-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			TwyDv0MuD3G8S2jd6ad1yvt0LQs=
+			V3GWGPBXoBqqjDrfevMMH32iY+o=
 			</data>
 			<key>hash2</key>
 			<data>
-			Pxf7ZZFjZYoMy0LngdrFzqO9sYuAytZ8H+GXKUuNaKQ=
+			KIr9RmsZIca1k0etcPMJPpe/JDTaeR/o1CO/GNcVB1E=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/i386-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kvuqydsbhocDMPIsZZ2YXiy5fTY=
+			JhG+erEdoGhSu/m9xVyeNBwhubs=
 			</data>
 			<key>hash2</key>
 			<data>
-			4d/XsaCYz6mc2eAMXDnT6EMG59KfK2gVHeC863iIHLQ=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/i386.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			qRpp6GdtM8lV0Y3dV36sQ5R6Bhs=
-			</data>
-			<key>hash2</key>
-			<data>
-			IIVOJUttMvOHnQJxrxUdDi3jSVI31JcyU7u6Ssr9gw4=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/i386.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			TwyDv0MuD3G8S2jd6ad1yvt0LQs=
-			</data>
-			<key>hash2</key>
-			<data>
-			Pxf7ZZFjZYoMy0LngdrFzqO9sYuAytZ8H+GXKUuNaKQ=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/i386.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			kvuqydsbhocDMPIsZZ2YXiy5fTY=
-			</data>
-			<key>hash2</key>
-			<data>
-			4d/XsaCYz6mc2eAMXDnT6EMG59KfK2gVHeC863iIHLQ=
+			wg4FVdwaiC9qa4R87JIRsDA+YS3B0lIMPuE9a3h2tPI=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			IdeZ2zr4NKPjU+S04afSXPT4ams=
+			yZMU6QWXJCiEEvRMsc6mQUosfZg=
 			</data>
 			<key>hash2</key>
 			<data>
-			HSHWRtaCIlP04jgOI7QR4bWTl5It30PwIxWgs6v68Fk=
+			GhYW/W7jEmoO8Obcz7imriYWK1fMbkoThJEczwThQDE=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wkVqX2+52gKSf9NY2KIShVJGYw8=
+			BuIAewj3jToMzIBF2G9xT2h5F7M=
 			</data>
 			<key>hash2</key>
 			<data>
-			ljKfO7tM1eYrCeHEInUZxZDpw69sRugeB+hw4lFOQow=
+			U3XTY7ngRZmrP0tfs4Msr9EcV6+hYFmUU33Odtx2uj4=
 			</data>
 		</dict>
 		<key>Modules/TouchPointKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FygsQx+o2NegKLAyVrHqWa6HTAY=
+			gyGbyTwr+hN510xf7fSuduIrjFc=
 			</data>
 			<key>hash2</key>
 			<data>
-			p4QKOEg1StMj+44tU5KH7/Yi1eq3yOwaLrzwUSBxnZw=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			IdeZ2zr4NKPjU+S04afSXPT4ams=
-			</data>
-			<key>hash2</key>
-			<data>
-			HSHWRtaCIlP04jgOI7QR4bWTl5It30PwIxWgs6v68Fk=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			wkVqX2+52gKSf9NY2KIShVJGYw8=
-			</data>
-			<key>hash2</key>
-			<data>
-			ljKfO7tM1eYrCeHEInUZxZDpw69sRugeB+hw4lFOQow=
-			</data>
-		</dict>
-		<key>Modules/TouchPointKit.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FygsQx+o2NegKLAyVrHqWa6HTAY=
-			</data>
-			<key>hash2</key>
-			<data>
-			p4QKOEg1StMj+44tU5KH7/Yi1eq3yOwaLrzwUSBxnZw=
+			A3ZFvCuWN0ft1MIk1m+u6BV5HifXBreZ0H3+w5rbIyI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -350,22 +215,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t2bzmUhKDjcUyemDZ/sCORnD4Gw=
+			5XWvwNnP5ORPD/zJ4cgOXqOPgQc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zx6iXsq4tRT/U+9pAcq9w1JRISO5265tNIyxLPSqiIE=
+			vWl0YbRE0DjeD6L9uNpZa8oP/BD5BapmCNB00dA6TZQ=
 			</data>
 		</dict>
 		<key>TouchPointBannerView.nib/runtime.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			mjH6vyR5MCGx+M+bQ2EHkqlJ1bE=
+			Ebhg88jzXJklJRVOd9q3TZVg9vY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5FxZn5TejtiZwiRki62ZtLS4dl08CzsKFdsrNgtj/WE=
+			uGqwdt5a/wtH6S9J3PRBh/xQtJz01eebdvsYRKpmz10=
 			</data>
 		</dict>
 		<key>touchpoint.storyboardc/Info.plist</key>
@@ -383,22 +248,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tUYQVfZjcE2Pkua7z1Z8TiTGLlo=
+			SKgcgBeYSDPO7qxK3EK73hJXCuM=
 			</data>
 			<key>hash2</key>
 			<data>
-			5LLVxUChzEarvwW4TMAmuzTReFJTPYAtBdeubj6Ui3c=
+			j7oU6m09u90MPQLFukqyFWqbn+aJ/VERgab2SLSsKNY=
 			</data>
 		</dict>
 		<key>touchpoint.storyboardc/TouchPointWebViewController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			41rRaoy+Lel2E6kI8MMMcG44sTA=
+			YFwiGxwV3a3by34p6NAj06FOpNA=
 			</data>
 			<key>hash2</key>
 			<data>
-			2dxJR+QMTr43R6zTlrRu55m/XGcDZKeKpOxA2va3kh4=
+			UB4TJaJ5jPcYnZuOfWm8+f5y+r9lTvFgoPUROJS3jRc=
 			</data>
 		</dict>
 	</dict>

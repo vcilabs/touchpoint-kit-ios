@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
 // swift-module-flags: -target arm64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name TouchPointKit
 import CommonCrypto
 import CryptoKit
@@ -9,15 +9,16 @@ import SystemConfiguration
 @_exported import TouchPointKit
 import UIKit
 import WebKit
+import _Concurrency
 import os
-@objc public protocol TouchPointActivityDelegate : AnyObject {
+@objc public protocol TouchPointActivityDelegate {
   @objc func onTouchPointActivityCollapse()
   @objc optional func onTouchPointActivityComplete()
 }
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TouchPointActivity : ObjectiveC.NSObject {
   @objc public var visitor: [Swift.String : Swift.String]
   @objc public var userAttributes: [Swift.String : Swift.String]
-  @objc public static var shared: TouchPointKit.TouchPointActivity
+  @objc public static let shared: TouchPointKit.TouchPointActivity
   @objc public var disableAPIFilter: Swift.Bool
   @objc public var enableDebugLogs: Swift.Bool
   @objc public var disableAllLogs: Swift.Bool
@@ -46,9 +47,12 @@ import os
   case sit1
   case pub
   public func value() -> Swift.String
-  public typealias RawValue = Swift.Int
   public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
 }
+extension TouchPointKit.TouchPointPods : Swift.Equatable {}
+extension TouchPointKit.TouchPointPods : Swift.Hashable {}
+extension TouchPointKit.TouchPointPods : Swift.RawRepresentable {}
