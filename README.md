@@ -183,6 +183,17 @@ if TouchPointActivity.shared.shouldShowActivity(screenName: SCREEN_NAME, compone
 
 This will allow you to manage how you render out your screen, for example by hiding or showing a button based on whether or not a Touchpoint activity is availble.
 
+### Refreshing the Activity List
+On each call to `TouchPointActivity.shared.configure` the SDK will reach out to Touchpoint to get the list of valid activities for the current user and cache them. Typically this function is run when the app loads up and is not called again, which could cause the list of activities to become stale. There is a helper function that will refresh this activity list for you:
+
+```kotlin
+TouchPointActivity.shared.refreshActivities()
+```
+
+This can be called at any time after `TouchPointActivity.shared.configure` and will get a fresh list of activities from Touchpoint.
+
+Note: Typically when a Touchpoint campaign is distributed to an app only one activity in the campaign will be shown per "session", as `TouchPointActivity.shared.configure` is usually called once on app start. Using `TouchPointActivity.shared.refreshActivities` can lead to the next activity in the campaign being displayed within the same user session.
+
 ### Callback Events
 The Touchpoint SDK offers two different callbacks that can be used to trigger custom logic as the user interacts with the activity.
 1. Collapse: when the user closes or collapses the activity. At this point the activity has just been removed from view and the user is back interacting with the app.
