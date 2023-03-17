@@ -249,6 +249,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+- (void)refreshActivities;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
 /// banner or popup needs to be displayed
 /// \param screenName Screen name of current controller
@@ -581,6 +582,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+- (void)refreshActivities;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
 /// banner or popup needs to be displayed
 /// \param screenName Screen name of current controller
@@ -913,6 +915,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
 - (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+- (void)refreshActivities;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
 /// banner or popup needs to be displayed
 /// \param screenName Screen name of current controller
