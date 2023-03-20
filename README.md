@@ -13,7 +13,7 @@ https://github.com/vcilabs/touchpointkit-sample-ios
 Include the following in your `Podfile`. To determine the latest tag please see https://github.com/vcilabs/touchpoint-kit-ios/tags.
 
 ```pod
-pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '1.0.1'
+pod 'TouchPointKit', :git => 'https://github.com/vcilabs/touchpoint-kit-ios.git', :tag => '1.0.3'
 ```
 
 Then run `pod install`
@@ -285,7 +285,7 @@ Now create two files inside your iOS project name `TouchPointKitBridge.h` and `T
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TouchPointKitBridge : RCTEventEmitter <RCTBridgeModule, TouchPointActivityCompletionDelegate>
+@interface TouchPointKitBridge : RCTEventEmitter <RCTBridgeModule, TouchPointActivityDelegate>
 
 @end
 
@@ -312,6 +312,14 @@ NS_ASSUME_NONNULL_END
 }
 
 RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(configure:(NSString *)apiKey apiSecret:(NSString *)apiSecret pod:(int)pod screens:(NSArray *)screens visitor:(NSDictionary *)visitor ) {
+  [[TouchPointActivity shared] configureWithApiKey:apiKey apiSecret:apiSecret podName:pod screenComponents:screens visitor:visitor];
+}
+
+RCT_EXPORT_METHOD(refreshActivities) {
+  [[TouchPointActivity shared] refreshActivities];
+}
 
 RCT_EXPORT_METHOD(setVisitor:(NSDictionary<NSString *, id> *)visitor)
 {
@@ -361,19 +369,50 @@ RCT_EXPORT_METHOD(openActivity:(NSString *)screenName componentName:(NSString *)
   }
 }
 
+RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(shouldShowActivity:(NSString *)screenName) {
+  BOOL val = [[TouchPointActivity shared] shouldShowActivityWithScreenName: screenName componentName: NULL];
+    return [NSNumber numberWithBool:val];
+}
+
+RCT_EXPORT_BLOCKING_SYNCHRONOUS_METHOD(shouldShowActivity:(NSString *)screenName componentName:(NSString *)componentName)  {
+  BOOL val = [[TouchPointActivity shared] shouldShowActivityWithScreenName: screenName componentName: componentName];
+    return [NSNumber numberWithBool:val];
+}
+
+RCT_EXPORT_METHOD(openActivityForUrl:(NSString *)url alwaysShow:(BOOL)alwaysShow)
+{
+  [[TouchPointActivity shared] openActivityForUrlWithDistUrl:url useBannerStyling:false delegate:self alwaysShow:alwaysShow];
+}
+
+RCT_EXPORT_METHOD(clearCache)
+{
+  NSUserDefaults * userDefaults = [NSUserDefaults standardUserDefaults];
+  NSDictionary * dict = [userDefaults dictionaryRepresentation];
+  for (id key in dict) {
+      [userDefaults removeObjectForKey:key];
+  }
+  [userDefaults synchronize];
+}
+
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
 }
 
-- (void) onActivityComplete {
+- (void) onTouchPointActivityComplete {
   if (hasListeners) {
-    [self sendEventWithName:@"onActivityComplete" body:@"ActivityCompleted"];
+    [self sendEventWithName:@"onTouchPointActivityComplete" body:@"TouchPointActivityCompleted"];
+  }
+}
+
+- (void) onTouchPointActivityCollapse {
+  if (hasListeners) {
+    [self sendEventWithName:@"onTouchPointActivityCollapse" body:@"TouchPointActivityCollapsed"];
   }
 }
 
 - (NSArray<NSString *> *)supportedEvents {
-  return @[@"onActivityComplete"];
+  return @[@"onTouchPointActivityComplete", @"onTouchPointActivityCollapse"];
 }
 
 @end
@@ -390,13 +429,23 @@ import {
 // Register for event listening from SDK (activity complete event)
 const { TouchPointKitBridge } = NativeModules;
 const eventEmitter = new NativeEventEmitter(TouchPointKitBridge);
-const subscription = eventEmitter.addListener(
-  'onActivityComplete',
-  onActivityComplete,
+eventEmitter.addListener(
+  'onTouchPointActivityComplete',
+  onTouchPointActivityComplete,
 );
 
-const onActivityComplete = event => {
-  console.log('onActivityComplete called');
+eventEmitter.addListener(
+  'onTouchPointActivityCollapse',
+  onTouchPointActivityCollapse,
+);
+
+const onTouchPointActivityComplete = (event) => {
+  console.log('onTouchPointActivityComplete called');
+  console.log(event);
+};
+
+const onTouchPointActivityCollapse = (event) => {
+  console.log('onTouchPointActivityCollapse called');
   console.log(event);
 };
 
