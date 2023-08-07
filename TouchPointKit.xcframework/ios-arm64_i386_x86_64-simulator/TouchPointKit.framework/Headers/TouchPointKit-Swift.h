@@ -244,11 +244,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
+/// \param locale (optional) This is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’. If not provided, it will default to ‘EN’
+///
 /// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName locale:(NSString * _Nonnull)locale screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
 - (void)refreshActivities;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
 /// banner or popup needs to be displayed
@@ -577,11 +579,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
+/// \param locale (optional) This is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’. If not provided, it will default to ‘EN’
+///
 /// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName locale:(NSString * _Nonnull)locale screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
 - (void)refreshActivities;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
 /// banner or popup needs to be displayed
@@ -910,11 +914,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
+/// \param locale (optional) This is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’. If not provided, it will default to ‘EN’
+///
 /// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
 /// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
 ///
-- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName locale:(NSString * _Nonnull)locale screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
 - (void)refreshActivities;
 /// Call this method in viewDidLoad of each controller on which TouchPoint
 /// banner or popup needs to be displayed

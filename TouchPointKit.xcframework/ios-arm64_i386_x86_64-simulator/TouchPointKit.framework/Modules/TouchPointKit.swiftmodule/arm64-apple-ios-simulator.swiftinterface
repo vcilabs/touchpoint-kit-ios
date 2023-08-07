@@ -25,7 +25,7 @@ import os
   @objc public var disableCaching: Swift.Bool
   @objc public var defaultBannerHeight: CoreGraphics.CGFloat
   @objc public var isStatusBarStyleLight: Swift.Bool
-  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenComponents: [[Swift.String : Swift.String]] = [], visitor: [Swift.String : Any] = [:])
+  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, locale: Swift.String = "EN", screenComponents: [[Swift.String : Swift.String]] = [], visitor: [Swift.String : Any] = [:])
   @objc public func refreshActivities()
   @objc public func setScreenName(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityDelegate? = nil)
   @objc public func cancelPopupForScreen(screenName: Swift.String)
