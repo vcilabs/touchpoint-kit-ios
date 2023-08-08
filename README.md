@@ -72,10 +72,11 @@ let podName = TouchPointPods.eu2
 // The locale is an optional parameter you can provide
 // It will indicate the language your activity is displayed to the user in
 // as long as that activity has been distributed with said language.
-// If not or no locale is provided, your activity will be displayed in English.
 // This same language logic applies to the banner text, should you have
 // an activity which is of type Banner
-// Valid values are: 'AR', 'ZH', 'EN', 'FR', 'DE', 'ID', 'IT', 'JA', 'KO', 'PL', 'PT', 'RU', 'ES', 'TH', 'TR', 'VI'
+// Valid values are: the ISO 639-1 code for the supported languages (found here: https://touchpoint.help.alida.com/enus/index.html#Languages)
+// such as 'EN', 'FR', 'IT', etc.
+// and the same default language as indicated there will apply if an invalid or no locale is provided
 let locale = 'EN'
 
 // These are the Screens and Screen Components in your mobile app that you 
