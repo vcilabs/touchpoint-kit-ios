@@ -325,8 +325,8 @@ NS_ASSUME_NONNULL_END
 
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(configure:(NSString *)apiKey apiSecret:(NSString *)apiSecret pod:(int)pod screens:(NSArray *)screens visitor:(NSDictionary *)visitor ) {
-  [[TouchPointActivity shared] configureWithApiKey:apiKey apiSecret:apiSecret podName:pod screenComponents:screens visitor:visitor];
+RCT_EXPORT_METHOD(configure:(NSString *)apiKey apiSecret:(NSString *)apiSecret pod:(int)pod locale: (NSString *)locale screens:(NSArray *)screens visitor:(NSDictionary *)visitor ) {
+  [[TouchPointActivity shared] configureWithApiKey:apiKey apiSecret:apiSecret podName:pod locale:locale screenComponents:screens visitor:visitor];
 }
 
 RCT_EXPORT_METHOD(refreshActivities) {
