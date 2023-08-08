@@ -69,6 +69,15 @@ let apiSecret = API_SECRET
 // Valid values are: na1, na2, eu1, eu2, ap2, ap3
 let podName = TouchPointPods.eu2 
 
+// The locale is an optional parameter you can provide
+// It will indicate the language your activity is displayed to the user in
+// as long as that activity has been distributed with said language.
+// If not or no locale is provided, your activity will be displayed in English.
+// This same language logic applies to the banner text, should you have
+// an activity which is of type Banner
+// Valid values are: 'AR', 'ZH', 'EN', 'FR', 'DE', 'ID', 'IT', 'JA', 'KO', 'PL', 'PT', 'RU', 'ES', 'TH', 'TR', 'VI'
+let locale = 'EN'
+
 // These are the Screens and Screen Components in your mobile app that you 
 // designate as being able to render Touchpoint activities.
 let screenComponents = [
@@ -115,6 +124,7 @@ TouchPointActivity.shared.configure(
     apiKey: apiKey,
     apiSecret: apiSecret,
     podName: podName,
+    locale: locale,
     screenComponents: screenComponents,
     visitor: visitor)
  
@@ -241,6 +251,8 @@ Please see the [Initial Setup](#initial-setup) section above for a description o
     // TouchPointPodsEU2, TouchPointPodsAP2, TouchPointPodsAP3
     TouchPointPods pod = TouchPointPodsEU2;
 
+    NSString *locale = @"EN"
+
     // Example user attributes used for targeting, see the integration details
     // above for more details.
     NSArray *userAttributes = @[
@@ -260,7 +272,7 @@ Please see the [Initial Setup](#initial-setup) section above for a description o
         @{ @"screenName": @"Custom Component Screen", @"componentName": @"Button 3" },
     ];
 
-    [[TouchPointActivity shared] configureWithApiKey: apiKey apiSecret: apiSecret podName: pod screenComponents: screenComponents visitor: visitor];
+    [[TouchPointActivity shared] configureWithApiKey: apiKey apiSecret: apiSecret podName: pod locale: locale screenComponents: screenComponents visitor: visitor];
 
     // Optional configuration elements, see integration details above for more details
     [TouchPointActivity shared].disableAPIFilter = false;
