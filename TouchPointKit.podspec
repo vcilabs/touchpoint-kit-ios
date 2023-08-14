@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = "TouchPointKit"
-    s.version = "1.0.4"
+    s.version = "1.0.5"
     s.summary = "TouchPointKit enables easy integration with Alida Touchpoint."
     s.description = <<-DESC
     TouchPointKit enables easy integration with Alida Touchpoint.

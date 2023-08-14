@@ -18,6 +18,7 @@ import os
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class TouchPointActivity : ObjectiveC.NSObject {
   @objc public var visitor: [Swift.String : Swift.String]
   @objc public var userAttributes: [Swift.String : Swift.String]
+  @objc public var locale: Swift.String
   @objc public static let shared: TouchPointKit.TouchPointActivity
   @objc public var disableAPIFilter: Swift.Bool
   @objc public var enableDebugLogs: Swift.Bool
@@ -25,7 +26,8 @@ import os
   @objc public var disableCaching: Swift.Bool
   @objc public var defaultBannerHeight: CoreGraphics.CGFloat
   @objc public var isStatusBarStyleLight: Swift.Bool
-  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, locale: Swift.String = "EN", screenComponents: [[Swift.String : Swift.String]] = [], visitor: [Swift.String : Any] = [:])
+  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, screenComponents: [[Swift.String : Swift.String]] = [], visitor: [Swift.String : Any] = [:])
+  @objc public func configure(apiKey: Swift.String, apiSecret: Swift.String, podName: TouchPointKit.TouchPointPods, locale: Swift.String, screenComponents: [[Swift.String : Swift.String]] = [], visitor: [Swift.String : Any] = [:])
   @objc public func refreshActivities()
   @objc public func setScreenName(screenName: Swift.String, delegate: TouchPointKit.TouchPointActivityDelegate? = nil)
   @objc public func cancelPopupForScreen(screenName: Swift.String)

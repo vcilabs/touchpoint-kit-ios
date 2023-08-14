@@ -226,6 +226,7 @@ SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull visitor;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributes;
+@property (nonatomic, copy) NSString * _Nonnull locale;
 /// Returns the shares instance of TouchPointActivity
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointActivity * _Nonnull shared;)
 + (TouchPointActivity * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
@@ -244,7 +245,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
-/// \param locale (optional) This is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’. If not provided, it will default to ‘EN’
+/// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
+///
+/// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
+///
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+/// Call this method on app launch to configure the TouchPoint SDK with a locale.
+/// \param apiKey API Key which you received on TouchPoint dashboard
+///
+/// \param apiSecret API Secret which you received on TouchPoint dashboard
+///
+/// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
+///
+/// \param locale this is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’.
 ///
 /// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
@@ -561,6 +574,7 @@ SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull visitor;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributes;
+@property (nonatomic, copy) NSString * _Nonnull locale;
 /// Returns the shares instance of TouchPointActivity
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointActivity * _Nonnull shared;)
 + (TouchPointActivity * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
@@ -579,7 +593,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
-/// \param locale (optional) This is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’. If not provided, it will default to ‘EN’
+/// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
+///
+/// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
+///
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+/// Call this method on app launch to configure the TouchPoint SDK with a locale.
+/// \param apiKey API Key which you received on TouchPoint dashboard
+///
+/// \param apiSecret API Secret which you received on TouchPoint dashboard
+///
+/// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
+///
+/// \param locale this is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’.
 ///
 /// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
@@ -896,6 +922,7 @@ SWIFT_CLASS("_TtC13TouchPointKit18TouchPointActivity")
 @interface TouchPointActivity : NSObject
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull visitor;
 @property (nonatomic, copy) NSDictionary<NSString *, NSString *> * _Nonnull userAttributes;
+@property (nonatomic, copy) NSString * _Nonnull locale;
 /// Returns the shares instance of TouchPointActivity
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointActivity * _Nonnull shared;)
 + (TouchPointActivity * _Nonnull)shared SWIFT_WARN_UNUSED_RESULT;
@@ -914,7 +941,19 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) TouchPointAc
 ///
 /// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
 ///
-/// \param locale (optional) This is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’. If not provided, it will default to ‘EN’
+/// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
+///
+/// \param visitor (optional) Visitor payload to tell the distributor who is visitng TouchPoint activity
+///
+- (void)configureWithApiKey:(NSString * _Nonnull)apiKey apiSecret:(NSString * _Nonnull)apiSecret podName:(enum TouchPointPods)podName screenComponents:(NSArray<NSDictionary<NSString *, NSString *> *> * _Nonnull)screenComponents visitor:(NSDictionary<NSString *, id> * _Nonnull)visitor;
+/// Call this method on app launch to configure the TouchPoint SDK with a locale.
+/// \param apiKey API Key which you received on TouchPoint dashboard
+///
+/// \param apiSecret API Secret which you received on TouchPoint dashboard
+///
+/// \param podName this is the environment. It can be dev1, dev2, na1, na2, sit1 etc.
+///
+/// \param locale this is the locale you’d like to display activities in. It can be ‘AR’, ‘ZH’, ‘EN’, ‘FR’, ‘DE’, ‘ID’, ‘IT’, ‘JA’, ‘KO’, ‘PL’, ‘PT’, ‘RU’, ‘ES’, ‘TH’, ‘TR’, ‘VI’.
 ///
 /// \param screenComponents (optional) Screen components on which TouchPoint activity needs to be displayed
 ///
