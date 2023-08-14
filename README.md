@@ -330,6 +330,10 @@ RCT_EXPORT_METHOD(configure:(NSString *)apiKey apiSecret:(NSString *)apiSecret p
   [[TouchPointActivity shared] configureWithApiKey:apiKey apiSecret:apiSecret podName:pod locale:locale screenComponents:screens visitor:visitor];
 }
 
+RCT_EXPORT_METHOD(configureWithLocale:(NSString *)apiKey apiSecret:(NSString *)apiSecret pod:(int)pod locale:(NSString *)locale screens:(NSArray *)screens visitor:(NSDictionary *)visitor ) {
+  [[TouchPointActivity shared] configureWithApiKey:apiKey apiSecret:apiSecret podName:pod locale:locale screenComponents:screens visitor:visitor];
+}
+
 RCT_EXPORT_METHOD(refreshActivities) {
   [[TouchPointActivity shared] refreshActivities];
 }
@@ -337,6 +341,11 @@ RCT_EXPORT_METHOD(refreshActivities) {
 RCT_EXPORT_METHOD(setVisitor:(NSDictionary<NSString *, id> *)visitor)
 {
   [TouchPointActivity shared].visitor = visitor;
+}
+
+RCT_EXPORT_METHOD(setLocale:(NSString *)locale)
+{
+  [TouchPointActivity shared].locale = locale;
 }
 
 RCT_EXPORT_METHOD(enableDebugLogs:(BOOL)enable)
